@@ -1,4 +1,5 @@
-## user
+## DBテーブル設計
+### user
 #### association
     - has_many  :stories
     - has_one   :address
@@ -8,7 +9,7 @@
 #### columns
     deviseで自動作成予定
 
-## address
+### address
 #### association
     - belongs_to :user
 
@@ -21,7 +22,7 @@
     - address2   t.string
     - telephone  t.integer
 
-## company
+### company
 #### association
     - belongs_to :user
 
@@ -44,7 +45,7 @@
     - recruit_url          t.string
     - about_url            t.string
 
-## sns
+### sns
 #### association
     - belongs_to :user
 
@@ -56,7 +57,7 @@
     - instagram  t.string
     - wantedly   t.string
 
-## story
+### story
 #### association
     - belongs_to  :user
     - has_many    :topics
@@ -66,7 +67,7 @@
 	- intro        t.string, null: false
 	- status       t.integer, null: false
 
-## topic
+### topic
 #### association
     - belongs_to :story
 
@@ -75,3 +76,7 @@
 	- image        t.string
 	- caption      t.text
 	- content      t.text
+
+
+## 画面遷移図
+![遷移図](https://cloud.githubusercontent.com/assets/1336608/19686418/05b3bda0-9afc-11e6-8bde-a2715b879b5a.png)
