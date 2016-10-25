@@ -57,16 +57,20 @@
     - wantedly   t.string
 
 ## story
-    - belongs_to :user
-
-	- user_id      t.string
+#### association
+    - belongs_to  :user
+    - has_many    :topics
+#### columns
+	- user_id      t.refferece :user
 	- title        t.string, null: false
 	- intro        t.string, null: false
 	- status       t.integer, null: false
 
 ## topic
-belongs_to story
+#### association
+    - belongs_to :story
 
+#### columns
 	- story_id     t.refferece :story
 	- image        t.string
 	- caption      t.text
