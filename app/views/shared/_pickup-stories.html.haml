@@ -1,0 +1,18 @@
+%section#main-pickup-stories
+  .main-pickup-stories
+    .main-pickup-stories__story
+      =link_to root_path, style: "background-image: url(#{asset_path('main-pickup-left.jpg')});" do
+        .title
+          .title__compnay
+            .title__compnay__logo
+              =image_tag('story-logo-left.png')
+            .title__compnay__name 山田車体工業株式会社
+          .title__story-title 70年の歴史は、小さなバラック工場からはじまった――トラックと共に歩んだ三代記
+    .main-pickup-stories__story
+      =link_to root_path, style: "background-image: url(#{asset_path('main-pickup-right.jpg')});" do
+        .title
+          .title__compnay
+            .title__compnay__logo
+              =image_tag('story-logo-right.gif')
+            .title__compnay__name 未来食堂
+          .title__story-title 元・エンジニアが営む“定食屋のスタートアップ”が、飲食業界の定説を覆す！？
