@@ -1,0 +1,47 @@
+#company-list {
+  margin: 20px;
+  padding: 0px 20px;
+  .container {
+    padding-top: 20px;
+    padding-left: 20px;
+    background-color: #fff;
+    h2 {
+      font-size: 14px;
+      margin-bottom: 30px;
+      color: #999;
+    }
+    .company {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+      a {
+        .info {
+          display: flex;
+          .image {
+            width: 50px;
+            height: 50px;
+            background-size: cover;
+            background-repeat: no-repeat;
+          }
+          .name {
+            padding-left: 30px;
+            font-size: 13px;
+            line-height: 50px;
+          }
+        }
+      }
+    }
+    .more {
+      width: 100%;
+      margin: 0px auto;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 10px 0;
+      border-top: 1px solid #EBEBEB;
+      a {
+        display: block;
+        text-align: center;
+      }
+    }
+  }
+}
