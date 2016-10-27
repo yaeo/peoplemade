@@ -1,0 +1,35 @@
+#list-stories {
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding-left: 40px;
+  article {
+    width: calc(100% / 3);
+    .content {
+      background-color: #fff;
+      height: 250px;
+      padding: 20px;
+      margin-right: 20px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      &__image {
+        height: 150px;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      &__title {
+        font-size: 12.5px;
+        font-weight: bold;
+        line-height: 1.5;
+      }
+      &__company {
+        font-size: 12px;
+        line-height: 1;
+      }
+    }
+  }
+}
