@@ -1,0 +1,15 @@
+%header#header
+  #global-header
+    .left
+      #logo
+        = link_to image_tag('logo.svg'), root_path
+      #header-nav
+        %ul
+          %li= link_to "新着記事", "#"
+          %li= link_to "PR Tableとは？", "#"
+    .right
+      #header-buttons
+        #create
+          = link_to "ストーリーを作成", "#"
+        #user
+          = link_to "#", "#"
