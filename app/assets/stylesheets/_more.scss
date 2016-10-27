@@ -1,0 +1,18 @@
+.more {
+  text-align: center;
+  margin-top: 80px;
+  padding-bottom: 100px;
+  a {
+    font-size: 13px;
+    width: 250px;
+    border-radius: 30px;
+    line-height: 30px;
+    background-color: #fff;
+    display: block;
+    margin: auto;
+    padding: 5px;
+  }
+  a:hover {
+    background-color: lightgreen;
+  }
+}
