@@ -1,0 +1,46 @@
+#main-pickup-stories {
+  width: 100%;
+  height: 300px;
+  .main-pickup-stories {
+    padding: 0px 40px;
+    margin: auto;
+    display: flex;
+    &__story {
+      width: 50%;
+      height: 300px;
+      a {
+        width: 100%;
+        height: 300px;
+        display: block;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        align-items: flex-end;
+        .title {
+          display: flex;
+          flex-direction: column;
+          padding: 20px 40px;
+          &__compnay {
+            display: flex;
+            align-items: center;
+            font-size: 13px;
+            &__logo img {
+              max-height: 35px;
+              margin-right: 10px;
+            }
+            &__name {
+              color: white;
+            }
+          }
+          &__story-title {
+            margin-top: 10px;
+            font-size: 20px;
+            color: white;
+            font-weight: bold;
+            line-height: 1.4em;
+          }
+        }
+      }
+    }
+  }
+}
