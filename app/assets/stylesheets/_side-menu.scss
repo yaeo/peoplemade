@@ -1,0 +1,46 @@
+#recommend-stories {
+  margin: 20px;
+  padding: 0px 20px;
+  .container {
+    padding-top: 20px;
+    padding-left: 20px;
+    background-color: #fff;
+    h2 {
+      font-size: 14px;
+      margin-bottom: 30px;
+      color: #999;
+    }
+    .stories {
+      display: flex;
+      flex-direction: column;
+      article {
+        display: flex;
+        margin-bottom: 20px;
+        a {
+          .info {
+            display: flex;
+            .image {
+              width: 90px;
+              height: 90px;
+            }
+            .story {
+              width: 55%;
+              display: flex;
+              justify-content: space-between;
+              flex-direction: column;
+              margin-left: 10px;
+              padding: 5px 0px;
+              &__title {
+                font-size: 12.5px;
+              }
+              &__company {
+                font-size: 11px;
+              }
+            }
+          }
+        }
+
+      }
+    }
+  }
+}

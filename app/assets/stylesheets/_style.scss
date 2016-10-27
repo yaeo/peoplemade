@@ -18,3 +18,13 @@ a{
 #wrap {
   background-color: #F2F2F2
 }
+
+#main-container {
+  display: flex;
+  #main-left {
+    width: 70%;
+  }
+  #side-menu {
+    width: 30%
+  }
+}
