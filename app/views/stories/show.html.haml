@@ -1,0 +1,69 @@
+#wrap
+  = render 'shared/header'
+  = render 'shared/breadcrumbs'
+  .story-container
+    %main.content
+      %article#story
+        .company
+          = link_to root_path do
+            .image
+              = image_tag('company-logo.png')
+              %figcaption 弥生会計
+        %h1 “ハッピーエンドの連鎖”をもたらす、CS（カスタマーサクセス）の在り方とは？
+        .intro
+          弥生株式会社では、2008年より「事業コンシェルジュ」というビジョンを掲げさまざまな業務改善に取り組んできました。その基盤を支えたのは、ずっと変わらず当社に根づく「お客さまのために」という社員一人ひとりの想い。今回は、当社のビジョンを最前線で体現している、カスタマーセンターの取り組みをご紹介します。
+        .socials
+          %ul
+            %li.facebook
+              = link_to "f", "#"
+            %li.eight
+              = link_to "8", "#"
+            %li.twitter
+              = link_to "鳥", "#"
+            %li.hatena
+              = link_to "B!", "#"
+            %li.pocket
+              = link_to "P", "#"
+        = render 'shared/topic'
+        = render 'shared/topic'
+        %section.story-footer
+          .socials
+            %ul
+              %li.facebook.round
+                = link_to "f", "#"
+              %li.eight.round
+                = link_to "8", "#"
+              %li.twitter.round
+                = link_to "鳥", "#"
+              %li.hatena.round
+                = link_to "B!", "#"
+              %li.pocket.round
+                = link_to "P", "#"
+          .info
+            .tags
+              = link_to "Text by PR Table", "#"
+              = link_to "社員・職員", "#"
+            %date 2016.10.26
+          .profile
+            .company-info{style: "background-image: url(#{asset_path('company-cover.jpg')});"}
+              .background
+              .company-wrap
+                .company-head
+                  .company-logo
+                    .figure
+                      .image
+                        = image_tag('company-logo.png')
+                      .figcaption 弥生株式会社
+                  .link
+                    = link_to "> この会社について", "#"
+                .buttons
+                  %ul
+                    %li
+                      =link_to "取材したい", "#", class:"coverage"
+            .other-story
+              %article
+                = link_to root_path do
+                  .story-image{style: "background-image: url(#{asset_path('other-story.jpg')});"}
+                  .title もう弥生“会計”株式会社とはいわせない ――「あなたの事業コンシェルジュ」が挑戦する未来像
+                  %p 弥生株式会社
+  = render 'shared/footer'

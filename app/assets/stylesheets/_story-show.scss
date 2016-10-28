@@ -1,0 +1,186 @@
+.story-container {
+  margin: 20px auto;
+  padding: 0px 20px;
+  main.content {
+    article#story{
+      width: 806px;
+      margin: 30px auto;
+      .company {
+        text-align: center;
+        margin-bottom: 30px;
+        img {
+          max-height: 150px;
+        }
+        figcaption {
+          font-size: 13px;
+        }
+      }
+      h1 {
+        margin-bottom: 30px;
+        text-align: center;
+      }
+      .intro {
+        font-size: 18px;
+        line-height: 1.8;
+        margin-bottom: 30px;
+      }
+      .socials {
+        ul {
+          display: flex;
+          justify-content: center;
+          li {
+            width: calc(100% / 5);
+            height: 40px;
+            a {
+              line-height: 40px;
+              text-align: center;
+              display: block;
+              color: #fff;
+            }
+          }
+          li.facebook {
+            background-color: #4b6ea8;
+          }
+          li.eight {
+            border: 1px solid #CCC;
+            box-sizing: border-box;
+            background-color: #FFF;
+            a {
+               color: lightblue;
+            }
+          }
+          li.twitter {
+            background-color: #4fd5f8;
+          }
+          li.hatena {
+            background-color: #008fde;
+          }
+          li.pocket {
+            background-color: #ee4056;
+          }
+          .round {
+            border-radius: 50%;
+            height: 40px;
+            width: 40px;
+            margin: 0px 5px;
+          }
+        }
+      }
+      .story-footer {
+        margin-top: 60px;
+        .info {
+          margin-top: 20px;
+          padding-top: 20px;
+          border-top: 1px solid #CCC;
+          font-size: 12px;
+          color: #CCC;
+          display: flex;
+          justify-content: space-between;
+          a {
+            margin-right: 10px;
+            color: #CCC;
+          }
+        }
+        .profile {
+          margin-top: 60px;
+          box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.4);
+          .company-info {
+            height: 200px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+            .background {
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background: linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%, transparent 100%);
+            }
+            .company-wrap {
+              height: 90%;
+              width: 100%;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: flex-end;
+              position: absolute;
+              padding-bottom: 20px;
+              .company-head {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 95%;
+                .company-logo {
+                  .figure {
+                    display: flex;
+                    .image {
+                      img {
+                        display: block;
+                        max-width: 40px;
+                      }
+                    }
+                    .figcaption {
+                      line-height: 40px;
+                      font-size: 20px;
+                      font-weight: bold;
+                      color: #fff;
+                      padding-left: 20px;
+                    }
+                  }
+                }
+                .link {
+                  a {
+                    color: #fff;
+                    font-size: 13px;
+                  }
+                }
+              }
+              .buttons {
+                ul {
+                  li {
+                    a {
+                      display: block;
+                      background-color: #c86b4a;
+                      line-height: 45px;
+                      width: 250px;
+                      color: #fff;
+                      text-align: center;
+                      border-radius: 5px;
+                      box-shadow: 0 3px 0 0 #663625;
+                      box-sizing: border-box;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .other-story {
+            padding: 20px;
+            article {
+              width: calc(100% / 3);
+              a {
+                .story-image {
+                  background-size: cover;
+                  background-repeat: no-repeat;
+                  height: 150px;
+                }
+                .title {
+                  margin-top: 10px;
+                  font-size: 13px;
+                  font-weight: bold;
+                  line-height: 1.5;
+                }
+                p {
+                  margin-top: 20px;
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
