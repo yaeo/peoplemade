@@ -1,0 +1,15 @@
+#breadcrumbs {
+  margin: 0px 20px;
+  padding: 15px 20px;
+  font-size: 13px;
+  .breadcrumbs {
+    a {
+      padding-right: 20px;
+      color: #666;
+    }
+    span {
+      padding-right: 20px;
+      color: #666;
+    }
+  }
+}
