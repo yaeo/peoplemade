@@ -30,13 +30,13 @@
     - user_id              t.refference  :user
     - name                 t.string, null: false
     - kana                 t.string, null: false
-    - open_url             t.string, null: false
-    - contact_person       t.string, null: false
+    - custom_url           t.string, null: false
+    - contact_person_name  t.string, null: false
     - contact_person_kana  t.string, null: false
     - logo                 t.string
     - cover_image          t.string
     - homepage_url         t.string
-    - industry             t.string
+    - industry_type        t.string
     - profile              t.text
     - vision               t.text
     - establish_y          t.integer
