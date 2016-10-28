@@ -1,0 +1,19 @@
+section.topic {
+  margin-top: 60px;
+  h2 {
+    font-size: 28px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+  }
+  .image {
+    text-align: center;
+    margin-bottom: 50px;
+    figcaption {
+      margin: 10px;
+    }
+  }
+  .topic-body {
+    font-size: 18px;
+    line-height: 1.7;
+  }
+}
