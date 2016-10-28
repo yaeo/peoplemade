@@ -45,7 +45,7 @@
     - recruit_url          t.string
     - about_url            t.string
 
-### sns
+### social
 #### association
     - belongs_to :user
 
