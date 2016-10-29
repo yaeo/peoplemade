@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_one :address
   has_one :company
   has_one :social
+
+  accepts_nested_attributes_for :company
 end

@@ -3,3 +3,10 @@
   = render 'shared/breadcrumbs'
   .profile
     %h1 基本情報設定
+    = form_for @user do |f|
+      = f.label :email, "メール"
+      = f.text_field :email
+      = f.fields_for :company do |company_fields|
+        = company_fields.label :custom_url, "URL"
+        = company_fields.text_field :custom_url
+      = f.submit

@@ -10,6 +10,6 @@
     .right
       #header-buttons
         #create
-          = link_to "ストーリーを作成", "#"
+          = link_to "ストーリーを作成", destroy_user_session_path
         #user
-          = link_to "#", profile_path
+          = link_to "#", edit_user_path(current_user)
