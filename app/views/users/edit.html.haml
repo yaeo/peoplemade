@@ -15,7 +15,7 @@
               %p 社名をアルファベットでご入力ください。
               .field-form.flex
                 %span https://www.pr-table.com/
-                = company.text_field :custom_url, placeholder: "例） pr-table", class: "left"
+                = company.text_field :custom_url, placeholder: "例） pr-table", class: "right"
             .form-field
               .field-label
                 = company.label :contact_person_name, "担当者名"
@@ -70,8 +70,95 @@
           = f.fields_for :address do |address|
             .form-field
               .field-label
-                = address.label :zipcode1, "郵便番号"
+                %span 住所
                 %span.must 必須
+              .field-form.zipcode
+                = address.text_field :zipcode1, placeholder: "例）150", class: "zipcode-form"
+                %span -
+                = address.text_field :zipcode2, placeholder: "例）00001", class: "zipcode-form"
+            .form-field
               .field-form
-                = address.text_field :zipcode1, placeholder: "150"
-        = f.submit
+                = address.collection_select :prefecture, JpPrefecture::Prefecture.all, :name, :name, prompt: "都道府県を選択"
+            .form-field
+              .field-form
+                = address.text_field :address1, placeholder: "市区町村以降"
+            .form-field
+              .field-form
+                = address.text_field :address2, placeholder: "ビル・マンション名"
+            .form-field
+              .field-label
+                = address.label :telnumber, "電話番号"
+              .field-form
+                = address.text_field :telnumber, placeholder: "例）03-1234-5678"
+          = f.fields_for :company do |company|
+            .form-field
+              .field-label
+                = company.label :homepage_url, "URL"
+              .field-form
+                = company.text_field :homepage_url, placeholder: "例）http://localhost:3000/"
+            .form-field
+              .field-label
+                = company.label :industry_type, "業種"
+              .field-form
+                = company.select :industry_type, @industry_type, prompt: "未選択"
+            .form-field
+              .field-label
+                = company.label :profile, "会社・団体説明"
+              .field-form
+                = company.text_area :profile, placeholder: "例）インターネットを活用した企業の広報活動支援"
+            .form-field
+              .field-label
+                = company.label :vision, "ビジョン・ミッション"
+              .field-form
+                = company.text_area :vision, placeholder: "例）いつまでも色あせないストーリーに満ち溢れた世界を創る"
+            .form-field
+              .field-label
+                = company.label :establish_y, "設立年月日"
+              .field-form
+                = raw sprintf(company.date_select(:establish_y, use_month_numbers: true, start_year: Time.now.year, end_year: 1980,date_separator: '%s', prompt: '--'), '年 ', '月 ') + '日'
+          = f.fields_for :social do |social|
+            .form-field
+              .field-label
+                = social.label :socials, "ソーシャルURL"
+              %p 「/（スラッシュ）」以降のURLをご入力ください。
+              .field-form.flex
+                %span.icon #
+                %span.social-left https://www.facebook.com/
+                = social.text_field :facebook, placeholder: "例）prtable", class: "social-right"
+            .form-field
+              .field-label
+              .field-form.flex
+                %span.icon #
+                %span.social-left https://twitter.com/
+                = social.text_field :twitter, placeholder: "例）PR_Table", class: "social-right"
+            .form-field
+              .field-form.flex
+                %span.icon #
+                %span.social-left https://www.youtube.com/
+                = social.text_field :youtube, placeholder: "例）user/prtable", class: "social-right"
+            .form-field
+              .field-form.flex
+                %span.icon #
+                %span.social-left https://instagram.com/
+                = social.text_field :instagram, placeholder: "例）prtable", class: "social-right"
+            .form-field
+              .field-form.flex
+                %span.icon #
+                %span.social-left https://www.wantedly.com/companies/
+                = social.text_field :wantedly, placeholder: "例）pr-table", class: "social-right"
+          = f.fields_for :company do |company|
+            .form-field
+              .field-label
+                = company.label :recruit_url, "「働きたい」ボタンの遷移先URL"
+              %p 自社の採用サイトや求人を掲載しているサイトのURLをご入力ください。
+              .field-form
+                = company.text_field :recruit_url
+            .form-field
+              .field-label
+                = company.label :about_url, "「事業を知る」ボタンの遷移先URL"
+              %p 自社の製品・サービスサイトのURLをご記入ください。
+              .field-form
+                = company.text_field :about_url
+        %section#submit
+          = f.submit "保存"
+  = render 'shared/footer'
