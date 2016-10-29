@@ -1,12 +1,77 @@
 #wrap
   = render 'shared/header'
   = render 'shared/breadcrumbs'
-  .profile
+  #profile
     %h1 基本情報設定
-    = form_for @user do |f|
-      = f.label :email, "メール"
-      = f.text_field :email
-      = f.fields_for :company do |company_fields|
-        = company_fields.label :custom_url, "URL"
-        = company_fields.text_field :custom_url
-      = f.submit
+    %section.form
+      = form_for @user do |f|
+        .edit-profile
+          %h2 担当者・ログイン情報
+          = f.fields_for :company do |company|
+            .form-field
+              .field-label
+                = company.label :custom_url, "企業ID"
+                %span.must 必須
+              %p 社名をアルファベットでご入力ください。
+              .field-form.flex
+                %span https://www.pr-table.com/
+                = company.text_field :custom_url, placeholder: "例） pr-table", class: "left"
+            .form-field
+              .field-label
+                = company.label :contact_person_name, "担当者名"
+              .field-form
+                = company.text_field :contact_person_name, placeholder: "氏名"
+            .form-field
+              .field-label
+                = company.label :contact_person_kana, "担当者名　フリガナ"
+              .field-form
+                = company.text_field :contact_person_kana, placeholder: "氏名（カナ）"
+            .form-field
+              .field-label
+                %label メールアドレス
+              %p= current_user.email
+              .field-form
+                = link_to "メールアドレス再設定", "#"
+        .edit-profile
+          %h2 企業情報
+          = f.fields_for :company do |company|
+            .form-field
+              .field-label
+                = company.label :name, "会社・団体名"
+                %span.must 必須
+              .field-form
+                = company.text_field :name, placeholder: "例） 株式会社PR Table"
+            .form-field
+              .field-label
+                = company.label :kana, "会社名　フリガナ"
+                %span.must 必須
+              .field-form
+                = company.text_field :kana, placeholder: "例） カブシキカイシャ ピーアールテーブル"
+            .form-field.flex
+              .left
+                .field-label
+                  = company.label :logo, "ロゴ画像"
+                  %span.must 必須
+                %p ロゴ画像（推奨サイズ 360×360ピクセル以上）
+                .field-form
+                  = company.file_field :logo
+              .right
+                .field-label
+                  = company.label :cover, "カバー画像"
+                  %span.public 公開されます。
+                %p カバー画像（推奨サイズ 1,200×630ピクセル）
+                .field-form
+                  = company.file_field :logo
+            .form-field
+              .field-label
+                = company.label :ceo_name, "代表者名"
+              .field-form
+                = company.text_field :ceo_name, placeholder: "例） 代表取締役　山田 太郎"
+          = f.fields_for :address do |address|
+            .form-field
+              .field-label
+                = address.label :zipcode1, "郵便番号"
+                %span.must 必須
+              .field-form
+                = address.text_field :zipcode1, placeholder: "150"
+        = f.submit

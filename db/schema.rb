@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161028113818) do
+ActiveRecord::Schema.define(version: 20161029060312) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20161028113818) do
     t.string   "contact_person_kana"
     t.string   "logo"
     t.string   "cover_image"
+    t.string   "ceo_name"
     t.string   "homepage_url"
     t.string   "industry_type"
     t.text     "profile",             limit: 65535

@@ -9,4 +9,6 @@ class User < ApplicationRecord
   has_one :social
 
   accepts_nested_attributes_for :company
+  accepts_nested_attributes_for :address
+  accepts_nested_attributes_for :social
 end
