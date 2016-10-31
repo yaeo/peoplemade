@@ -16,4 +16,4 @@
             = link_to "ログイン", new_user_session_path
         #user
           - if user_signed_in?
-            = link_to "ユーザー編集", edit_user_path(current_user)
+            = link_to "ユーザー編集", profile_path
