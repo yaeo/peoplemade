@@ -7,13 +7,20 @@ class StoriesController < ApplicationController
 
   def new
     @story = Story.new
-    
-    #topicに保存できるよう一緒にビルドする
-    if @story.topics.nil?
-      @story.build_topic
-    end
+    @story.topics.build
   end
 
   def create
+    story = Story.new(story_params)
+    if story.save
+      redirect_to root_path
+    else
+      redirect_to root_path
+    end
   end
+
+  private
+    def story_params
+      params.require(:story).permit(:title, :intro, topics_attributes: [:image, :caption, :heading, :content])
+    end
 end

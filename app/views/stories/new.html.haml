@@ -30,7 +30,7 @@
             = f.text_area :intro, placeholder: "150文字以内（ストーリー概要など）"
       %section.topic
         %h2 1つめのトピック
-        = fields_for :topic do |topic|
+        = f.fields_for :topics do |topic|
           .image-selector-heading
             -# TODO 画像と動画の選択をタブで切り替えるようにする
             .image-selector-heading__image-type
