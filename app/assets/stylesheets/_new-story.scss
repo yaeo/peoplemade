@@ -202,3 +202,37 @@ section.topic {
     }
   }
 }
+
+section#submit {
+  text-align: center;
+  .announce {
+    font-size: 15px;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  .check {
+    padding: 20px 0px;
+    a {
+      font-size: 12px;
+      background-color: #EBEBEB;
+      border-radius: 30px;
+      height: 30px;
+      line-height: 30px;
+      display: inline-block;
+      padding: 0px 20px;
+    }
+  }
+  input {
+    margin-top: 10px;
+    padding: 0px 30px;
+    background-color: #29d9c2;
+    color: #fff;
+    border: none;
+    font-size: 15px;
+    min-width: 350px;
+    line-height: 50px;
+    border-radius: 5px;
+    // font-weight: bold;
+    box-shadow: 0 3px 0 0 #40a29f;
+  }
+}
