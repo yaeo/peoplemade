@@ -10,6 +10,10 @@
     .right
       #header-buttons
         #create
-          = link_to "ストーリーを作成", "#"
+          - if user_signed_in?
+            = link_to "ログアウト", destroy_user_session_path, method: :delete
+          - else
+            = link_to "ログイン", new_user_session_path
         #user
-          = link_to "#", "#"
+          - if user_signed_in?
+            = link_to "ユーザー編集", profile_path

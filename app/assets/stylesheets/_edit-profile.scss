@@ -1,0 +1,130 @@
+#profile {
+  width: 930px;
+  margin: 0px auto;
+  h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+  section.form {
+    .edit-profile {
+      margin-bottom: 60px;
+      h2 {
+        font-size: 18px;
+        line-height: 1;
+        padding: 20px 10px;
+        margin-bottom: 20px;
+        border-top: 1px solid #CCC;
+        border-bottom: 1px solid #CCC;
+      }
+      .form-field {
+        &.flex {
+          display: flex;
+          .left {
+            width: 50%;
+          }
+          .right {
+            width: 50%;
+          }
+        }
+        margin: 20px 0px;
+        .field-label {
+          margin-bottom: 10px;
+          label {
+            font-size: 13px;
+            font-weight: bold;
+          }
+          .must {
+            display: inline-block;
+            font-size: 11px;
+            color: #fff;
+            background-color: #FF0000;
+            line-height: 15px;
+            padding: 0px 5px;
+          }
+        }
+        p {
+          font-size: 13px;
+          margin-bottom: 20px;
+        }
+        .field-form {
+          font-size: 13px;
+          width: 100%;
+          span {
+            width: 20%;
+            height: 50px;
+            line-height: 50px;
+            &.social-left {
+              width: 30%;
+            }
+            &.icon {
+              width: 5%;
+            }
+          }
+          input {
+            padding-left: 15px;
+            font-size: 14px;
+            width: 100%;
+            height: 50px;
+            border: 1px solid #CCC;
+            border-radius: 5px;
+            box-sizing: border-box;
+            &.right {
+              margin-left: 30px;
+              width: 80%;
+            }
+            &.social-right {
+              width: 65%;
+            }
+          }
+          &.flex {
+            display: flex;
+          }
+          &.zipcode {
+            display: flex;
+            span {
+              width: 5%;
+              font-weight: bold;
+              text-align: center;
+            }
+            .zipcode-form {
+              width: 20%;
+            }
+          }
+          select {
+            padding-left: 15px;
+            font-size: 14px;
+            width: 20%;
+            height: 50px;
+            border: 1px solid #CCC;
+            border-radius: 5px;
+            box-sizing: border-box;
+          }
+          textarea {
+            padding: 15px;
+            font-size: 14px;
+            width: 100%;
+            height: 150px;
+            border: 1px solid #CCC;
+            border-radius: 5px;
+            box-sizing: border-box;
+          }
+        }
+      }
+    }
+    section#submit {
+      text-align: center;
+      input {
+        background-color: #29d9c2;
+        color: #fff;
+        border: none;
+        font-size: 15px;
+        min-width: 350px;
+        line-height: 50px;
+        border-radius: 5px;
+        font-weight: bold;
+        box-shadow: 0 3px 0 0 #40a29f;
+      }
+    }
+  }
+}
