@@ -115,8 +115,12 @@
               .field-label
                 = company.label :establish_y, "設立年月日"
               .field-form
-                -# TODO praramsをひとつにまどめて保存する
-                = raw sprintf(company.date_select(:establish_y, use_month_numbers: true, start_year: Time.now.year, end_year: 1980,date_separator: '%s', prompt: '--'), '年 ', '月 ') + '日'
+                = company.select :establish_y, Date.today.year-10..Date.today.year, prompt: "--"
+                %span 年
+                = company.select :establish_m, 1..12, prompt: "--"
+                %span 月
+                = company.select :establish_y, 1..31, prompt: "--"
+                %span 日
           = f.fields_for :social do |social|
             .form-field
               .field-label
