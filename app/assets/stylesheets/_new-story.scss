@@ -124,8 +124,12 @@ section.topic {
   .image-selector-main {
     border: 1px solid #CCC;
     &__regulation {
+      height: 180px;
+      padding: 10px;
+      text-align: center;
+      overflow: hidden;
       img {
-        width: 100%;
+        height: 100%;
       }
     }
     &__selector {
