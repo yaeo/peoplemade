@@ -12,6 +12,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem "haml-rails", "~> 0.9"
 gem 'devise'
 gem 'jp_prefecture'
+gem 'carrierwave', '1.0.0.beta', '< 2.0'
 
 group :development, :test do
   gem 'byebug'
