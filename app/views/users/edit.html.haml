@@ -60,7 +60,7 @@
                 .field-form.selector
                   %span 画像を選択
                   %small （3MB以下のファイルをご使用ください）
-                  = company.file_field :logo, class: "image"
+                  = company.file_field :logo, class: "image-select"
               .right
                 .field-label
                   = company.label :cover_image, "カバー画像"
@@ -73,7 +73,7 @@
                 .field-form.selector
                   %span 画像を選択
                   %small （3MB以下のファイルをご使用ください）
-                  = company.file_field :cover_image, class: "image"
+                  = company.file_field :cover_image, class: "image-select"
             .form-field
               .field-label
                 = company.label :ceo_name, "代表者名"
