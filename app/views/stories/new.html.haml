@@ -1,0 +1,39 @@
+#wrap
+  = render 'shared/header'
+  = render 'shared/breadcrumbs'
+  .main-wrap
+    .instruction
+      ストーリー作成完了後、PR Table編集部が最終確認を行います。
+      %br
+      下記「ストーリー作成のポイント」をご参照の上ご作成いただくと、公開審査がスムーズになります。
+      %br
+      %small 確認には2〜3営業日を要します。また、内容によってはストーリーを掲載できない場合がございますので、あらかじめご了承ください
+    .point
+      =link_to "構成・文章のポイントを見る", "#"
+    = form_for @story do |f|
+      %section.form
+        .field
+          .field__label
+            = f.label :title, "タイトル"
+            %span.must 必須
+            %span.rule 40文字以内
+          %p.note 読者にどんなストーリーかが伝わる、“想い”のこもったタイトルをつけてください。
+          .field__form
+            = f.text_field :title, placeholder: "40文字以内"
+        .field
+          .field__label
+            = f.label :intro, "リード"
+            %span.must 必須
+            %span.rule 150文字以内
+          %p.note このストーリーの全体概要を簡潔に、かつ読者の興味を引くようにご説明ください。（会社・団体の視点）
+          .field__form
+            = f.text_area :intro, placeholder: "150文字以内（ストーリー概要など）"
+      - 4.times do |n|
+        = render partial: 'shared/edit-topic', locals: { title: n+1, f: f }
+      %section#submit
+        .announce ステークホルダーに配慮した表現等のチェックはお済みですか?
+        .check
+          =link_to "チェック項目を見る"
+        =f.hidden_field :user_id, value: current_user.id
+        =f.submit "ストーリーを保存して、PR Table編集部に最終確認を申請する"
+  = render 'shared/footer'
