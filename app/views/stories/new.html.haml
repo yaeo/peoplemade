@@ -34,5 +34,6 @@
         .announce ステークホルダーに配慮した表現等のチェックはお済みですか?
         .check
           =link_to "チェック項目を見る"
+        =f.hidden_field :user_id, value: current_user.id
         =f.submit "ストーリーを保存して、PR Table編集部に最終確認を申請する"
   = render 'shared/footer'

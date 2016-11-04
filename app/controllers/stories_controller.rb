@@ -21,6 +21,6 @@ class StoriesController < ApplicationController
 
   private
     def story_params
-      params.require(:story).permit(:title, :intro, topics_attributes: [:image, :caption, :heading, :content])
+      params.require(:story).permit(:title, :intro, :user_id, topics_attributes: [:image, :caption, :heading, :content])
     end
 end
