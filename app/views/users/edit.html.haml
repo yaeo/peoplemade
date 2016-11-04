@@ -53,15 +53,27 @@
                   = company.label :logo, "ロゴ画像"
                   %span.must 必須
                 %p ロゴ画像（推奨サイズ 360×360ピクセル以上）
-                .field-form
-                  = company.file_field :logo
+                - if @user.company.logo.blank?
+                  .image= image_tag 'noimage.gif', id: 'js-logo'
+                - else
+                  .image= image_tag @user.company.logo, id: 'js-logo'
+                .field-form.selector
+                  %span 画像を選択
+                  %small （3MB以下のファイルをご使用ください）
+                  = company.file_field :logo, class: "image"
               .right
                 .field-label
-                  = company.label :cover, "カバー画像"
+                  = company.label :cover_image, "カバー画像"
                   %span.public 公開されます。
                 %p カバー画像（推奨サイズ 1,200×630ピクセル）
-                .field-form
-                  = company.file_field :logo
+                - if @user.company.cover_image.blank?
+                  .image= image_tag 'noimage.gif', id: 'js-cover_image'
+                - else
+                  .image= image_tag @user.company.cover_image, id: 'js-cover_image'
+                .field-form.selector
+                  %span 画像を選択
+                  %small （3MB以下のファイルをご使用ください）
+                  = company.file_field :cover_image, class: "image"
             .form-field
               .field-label
                 = company.label :ceo_name, "代表者名"
