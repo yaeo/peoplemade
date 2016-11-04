@@ -1,0 +1,97 @@
+#wrap
+  = render 'shared/header'
+  = render 'shared/breadcrumbs'
+  .single-column-wrap
+    .header
+      %h1 ストーリーの編集
+    %p.list-result 1件中 1-1件を表示しています。
+    #edit-story-list
+      %article
+        .hover
+          %mark 下書き
+          = link_to "#" do
+            .story-image{style: "background-image: url(#{asset_path(@story.topics[0].image)});"}
+            %p= @story.title
+        .tools
+          %ul#tools
+            %li= link_to "編集", "#"
+            %li= link_to "下書き", "#"
+            %li= link_to "削除", "#"
+      %article
+        .hover
+          %mark 下書き
+          = link_to "#" do
+            .story-image{style: "background-image: url(#{asset_path(@story.topics[0].image)});"}
+            %p= @story.title
+        .tools
+          %ul#tools
+            %li= link_to "編集", "#"
+            %li= link_to "下書き", "#"
+            %li= link_to "削除", "#"
+      %article
+        .hover
+          %mark 下書き
+          = link_to "#" do
+            .story-image{style: "background-image: url(#{asset_path(@story.topics[0].image)});"}
+            %p= @story.title
+        .tools
+          %ul#tools
+            %li= link_to "編集", "#"
+            %li= link_to "下書き", "#"
+            %li= link_to "削除", "#"
+      %article
+        .hover
+          %mark 下書き
+          = link_to "#" do
+            .story-image{style: "background-image: url(#{asset_path(@story.topics[0].image)});"}
+            %p= @story.title
+        .tools
+          %ul#tools
+            %li= link_to "編集", "#"
+            %li= link_to "下書き", "#"
+            %li= link_to "削除", "#"
+      %article
+        .hover
+          %mark 下書き
+          = link_to "#" do
+            .story-image{style: "background-image: url(#{asset_path(@story.topics[0].image)});"}
+            %p= @story.title
+        .tools
+          %ul#tools
+            %li= link_to "編集", "#"
+            %li= link_to "下書き", "#"
+            %li= link_to "削除", "#"
+      %article
+        .hover
+          %mark 下書き
+          = link_to "#" do
+            .story-image{style: "background-image: url(#{asset_path(@story.topics[0].image)});"}
+            %p= @story.title
+        .tools
+          %ul#tools
+            %li= link_to "編集", "#"
+            %li= link_to "下書き", "#"
+            %li= link_to "削除", "#"
+      %article
+        .hover
+          %mark 下書き
+          = link_to "#" do
+            .story-image{style: "background-image: url(#{asset_path(@story.topics[0].image)});"}
+            %p= @story.title
+        .tools
+          %ul#tools
+            %li= link_to "編集", "#"
+            %li= link_to "下書き", "#"
+            %li= link_to "削除", "#"
+      %article
+        .hover
+          %mark 下書き
+          = link_to "#" do
+            .story-image{style: "background-image: url(#{asset_path(@story.topics[0].image)});"}
+            %p= @story.title
+        .tools
+          %ul#tools
+            %li= link_to "編集", "#"
+            %li= link_to "下書き", "#"
+            %li= link_to "削除", "#"
+  = render 'shared/footer'
