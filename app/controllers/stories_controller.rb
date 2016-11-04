@@ -1,9 +1,10 @@
 class StoriesController < ApplicationController
   def index
+    @list_stories = Story.all
   end
 
   def show
-    @story = Story.find(29)
+    @story = Story.find(params[:id])
   end
 
   def new

@@ -3,7 +3,8 @@
   = render 'shared/pickup-stories'
   #main-container
     #main-left
-      = render 'shared/list-stories'
+      %section#list-stories
+        = render partial: 'shared/list_story', collection: @list_stories
       = render 'shared/more'
     #side-menu
       = render 'shared/recommend-stories'
