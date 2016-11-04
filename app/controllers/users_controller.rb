@@ -30,7 +30,8 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:email,
         company_attributes: [:id, :custom_url, :contact_person_name, :contact_person_kana, :name, :kana,
-          :ceo_name, :homepage_url, :industry_type, :profile, :vision, :recruit_url, :about_url, :establish_y, :establish_m, :establish_d],
+          :ceo_name, :logo, :cover_image, :homepage_url, :industry_type, :profile, :vision, :recruit_url,
+          :about_url, :establish_y, :establish_m, :establish_d],
         address_attributes: [:id, :zipcode1, :zipcode2, :prefecture, :address1, :address2, :telnumber],
         social_attributes: [:id, :facebook, :twitter, :youtube, :instagram, :wantedly],
         )

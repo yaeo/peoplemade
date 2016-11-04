@@ -7,7 +7,7 @@
         .company
           = link_to root_path do
             .image
-              = image_tag('company-logo.png')
+              = image_tag(@story.company_logo)
               %figcaption= @story.company_name
         %h1= @story.title
         .intro= @story.intro
