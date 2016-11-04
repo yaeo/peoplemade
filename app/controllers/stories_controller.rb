@@ -3,6 +3,7 @@ class StoriesController < ApplicationController
   end
 
   def show
+    @story = Story.find(29)
   end
 
   def new

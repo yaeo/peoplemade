@@ -8,10 +8,9 @@
           = link_to root_path do
             .image
               = image_tag('company-logo.png')
-              %figcaption 弥生会計
-        %h1 “ハッピーエンドの連鎖”をもたらす、CS（カスタマーサクセス）の在り方とは？
-        .intro
-          弥生株式会社では、2008年より「事業コンシェルジュ」というビジョンを掲げさまざまな業務改善に取り組んできました。その基盤を支えたのは、ずっと変わらず当社に根づく「お客さまのために」という社員一人ひとりの想い。今回は、当社のビジョンを最前線で体現している、カスタマーセンターの取り組みをご紹介します。
+              %figcaption= @story.company_name
+        %h1= @story.title
+        .intro= @story.intro
         .socials
           %ul
             %li.facebook
@@ -24,8 +23,7 @@
               = link_to "B!", "#"
             %li.pocket
               = link_to "P", "#"
-        = render 'shared/topic'
-        = render 'shared/topic'
+        = render partial: 'shared/topic', collection: @story.topics
         %section.story-footer
           .socials
             %ul
