@@ -3,7 +3,7 @@
   = render 'shared/header'
   - breadcrumb :company, @company
   = breadcrumbs separator: " &gt; "
-  .cover-image{style: "backgroud-image: url(#{asset_path(@company.cover_image)});"}
+  .cover-image{style: "background-image: url(#{asset_path(@company.cover_image)});"}
   .single-column-wrap
     .header
       %h1= @company.name
