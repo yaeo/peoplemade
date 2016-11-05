@@ -21,3 +21,7 @@ end
 crumb :profile do
   link "基本情報設定", profile_path
 end
+
+crumb :company do |company|
+  link company.name, company_path(company)
+end

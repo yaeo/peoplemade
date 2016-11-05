@@ -1,0 +1,12 @@
+- provide(:title, "#{@company.name}｜PR Table")
+#wrap
+  = render 'shared/header'
+  - breadcrumb :company, @company
+  = breadcrumbs separator: " &gt; "
+  .cover-image{style: "backgroud-image: url(#{asset_path(@company.cover_image)});"}
+  .single-column-wrap
+    .header
+      %h1= @company.name
+    #edit-story-list
+      = render partial: 'shared/edit_story_list', collection: @edit_story_lists
+  = render 'shared/footer'
