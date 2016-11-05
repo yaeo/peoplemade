@@ -19,4 +19,12 @@ class Story < ApplicationRecord
   def company_logo
     self.user.company.logo
   end
+
+  def cover_image
+    self.user.company.cover_image
+  end
+
+  def image
+    self.topics[0].image
+  end
 end

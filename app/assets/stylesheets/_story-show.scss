@@ -157,8 +157,10 @@
             }
           }
           .other-story {
+            display: flex;
             padding: 20px;
             article {
+              margin-right: 20px;
               width: calc(100% / 3);
               a {
                 .story-image {
@@ -171,12 +173,16 @@
                   font-size: 13px;
                   font-weight: bold;
                   line-height: 1.5;
+                  height: 50px;
                 }
                 p {
                   margin-top: 20px;
                   font-size: 12px;
                 }
               }
+            }
+            article:nth-of-type(3n) {
+              margin-right: 0px;
             }
           }
         }

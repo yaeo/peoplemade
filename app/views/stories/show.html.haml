@@ -43,15 +43,15 @@
               = link_to "社員・職員", "#"
             %date 2016.10.26
           .profile
-            .company-info{style: "background-image: url(#{asset_path('company-cover.jpg')});"}
+            .company-info{style: "background-image: url(#{asset_path(@story.cover_image)});"}
               .background
               .company-wrap
                 .company-head
                   .company-logo
                     .figure
                       .image
-                        = image_tag('company-logo.png')
-                      .figcaption 弥生株式会社
+                        = image_tag(@story.company_logo)
+                      .figcaption= @story.company_name
                   .link
                     = link_to "> この会社について", "#"
                 .buttons
@@ -59,9 +59,10 @@
                     %li
                       =link_to "取材したい", "#", class:"coverage"
             .other-story
-              %article
-                = link_to root_path do
-                  .story-image{style: "background-image: url(#{asset_path('other-story.jpg')});"}
-                  .title もう弥生“会計”株式会社とはいわせない ――「あなたの事業コンシェルジュ」が挑戦する未来像
-                  %p 弥生株式会社
+              - @story.user.stories.each do |story|
+                %article
+                  = link_to story_path(story) do
+                    .story-image{style: "background-image: url(#{asset_path(story.image)});"}
+                    .title= story.title
+                    %p= story.company_name
   = render 'shared/footer'
