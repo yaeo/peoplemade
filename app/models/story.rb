@@ -1,4 +1,9 @@
 class Story < ApplicationRecord
+  #validation
+  validates :title, presence: true
+  validates :intro, presence: true
+  validates :status, presence: true
+
   #association
   belongs_to  :user
   has_many    :topics
@@ -13,5 +18,13 @@ class Story < ApplicationRecord
 
   def company_logo
     self.user.company.logo
+  end
+
+  def cover_image
+    self.user.company.cover_image
+  end
+
+  def image
+    self.topics[0].image
   end
 end

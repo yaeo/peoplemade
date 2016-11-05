@@ -1,6 +1,8 @@
+- provide(:title, "作成ストーリー一覧｜PR Table")
 #wrap
   = render 'shared/header'
-  = render 'shared/breadcrumbs'
+  - breadcrumb :story_list
+  = breadcrumbs separator: " &gt; "
   .single-column-wrap
     .header
       %h1 ストーリーの編集

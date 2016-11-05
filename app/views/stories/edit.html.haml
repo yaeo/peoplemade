@@ -1,6 +1,8 @@
+- provide(:title, "ストーリー編集｜PR Table")
 #wrap
   = render 'shared/header'
-  = render 'shared/breadcrumbs'
+  - breadcrumb :edit_story
+  = breadcrumbs separator: " &gt; "
   .main-wrap
     .instruction
       ストーリー作成完了後、PR Table編集部が最終確認を行います。

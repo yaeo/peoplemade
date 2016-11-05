@@ -1,6 +1,8 @@
+- provide(:title, "基本情報設定｜PR Table")
 #wrap
   = render 'shared/header'
-  = render 'shared/breadcrumbs'
+  - breadcrumb :profile
+  = breadcrumbs separator: " &gt; "
   #profile
     %h1 基本情報設定
     %section.form
