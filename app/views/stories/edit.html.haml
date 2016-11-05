@@ -28,8 +28,7 @@
           %p.note このストーリーの全体概要を簡潔に、かつ読者の興味を引くようにご説明ください。（会社・団体の視点）
           .field__form
             = f.text_area :intro, placeholder: "150文字以内（ストーリー概要など）"
-      - 4.times do |n|
-        = render partial: 'shared/new-topic', locals: { title: n+1, f: f }
+      = render partial: 'shared/edit_topic', locals: { f: f }
       %section#submit
         .announce ステークホルダーに配慮した表現等のチェックはお済みですか?
         .check

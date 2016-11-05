@@ -10,7 +10,7 @@
               = link_to "ログアウト", destroy_user_session_path, method: :delete
             - else
               = link_to "ログイン", new_user_session_path
-          %li= link_to "PR Tableとは？", "#"
+          %li= link_to "投稿記事一覧", stories_path
     .right
       #header-buttons
         #create

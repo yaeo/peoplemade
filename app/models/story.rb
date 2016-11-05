@@ -5,6 +5,8 @@ class Story < ApplicationRecord
 
   accepts_nested_attributes_for :topics
 
+  enum status: { draft: 0, inreview: 1, published: 2, deleted: 4}
+
   def company_name
     self.user.company.name
   end

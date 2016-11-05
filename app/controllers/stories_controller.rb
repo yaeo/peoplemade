@@ -1,6 +1,9 @@
 class StoriesController < ApplicationController
+  before_action :authenticate_user!, only: [:index, :new, :create, :edit, :update]
+  before_action :correct_user, only: [:edit, :update]
+
   def index
-    @list_stories = Story.all
+    @edit_story_lists = current_user.stories
   end
 
   def show
@@ -21,8 +24,24 @@ class StoriesController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @story.update(story_params)
+      redirect_to root_url
+    else
+      redirect_to root_url
+    end
+  end
+
   private
     def story_params
-      params.require(:story).permit(:title, :intro, :user_id, topics_attributes: [:image, :caption, :heading, :content])
+      params.require(:story).permit(:title, :intro, :user_id, :status, topics_attributes: [:id, :image, :caption, :heading, :content])
+    end
+
+    def correct_user
+      @story = Story.find(params[:id])
+      redirect_to root_url unless current_user == @story.user
     end
 end

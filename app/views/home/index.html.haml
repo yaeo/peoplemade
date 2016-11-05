@@ -1,0 +1,14 @@
+#wrap.gray
+  = render 'shared/header'
+  = render 'shared/pickup-stories'
+  #main-container
+    #main-left
+      %section#list-stories
+        = render partial: 'shared/list_story', collection: @list_stories
+      = render 'shared/more'
+    #side-menu
+      = render 'shared/recommend-stories'
+      = render 'shared/recommend-topic'
+      = render 'shared/company-list'
+      = render 'shared/banner'
+  = render 'shared/footer'

@@ -1,14 +1,10 @@
-#wrap.gray
+#wrap
   = render 'shared/header'
-  = render 'shared/pickup-stories'
-  #main-container
-    #main-left
-      %section#list-stories
-        = render partial: 'shared/list_story', collection: @list_stories
-      = render 'shared/more'
-    #side-menu
-      = render 'shared/recommend-stories'
-      = render 'shared/recommend-topic'
-      = render 'shared/company-list'
-      = render 'shared/banner'
+  = render 'shared/breadcrumbs'
+  .single-column-wrap
+    .header
+      %h1 ストーリーの編集
+    %p.list-result 1件中 1-1件を表示しています。
+    #edit-story-list
+      = render partial: 'shared/edit_story_list', collection: @edit_story_lists
   = render 'shared/footer'
