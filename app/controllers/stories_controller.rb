@@ -1,6 +1,6 @@
 class StoriesController < ApplicationController
   def index
-    @story = Story.find(29)
+    @edit_story_lists = current_user.stories
   end
 
   def show
