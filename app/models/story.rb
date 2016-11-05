@@ -1,4 +1,9 @@
 class Story < ApplicationRecord
+  #validation
+  validates :title, presence: true
+  validates :intro, presence: true
+  validates :status, presence: true
+
   #association
   belongs_to  :user
   has_many    :topics
