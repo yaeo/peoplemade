@@ -5,7 +5,9 @@ class StoriesController < ApplicationController
   before_action :is_deleted?,         only: [:edit]
 
   def index
-    @edit_story_lists = current_user.stories.draft && current_user.stories.inreview && current_user.stories.published
+    @edit_story_lists =  Story.where(user_id: current_user).where(status: 0)
+                          .or(Story.where(user_id: current_user).where(status: 1))
+                          .or(Story.where(user_id: current_user).where(status: 2))
   end
 
   def show
