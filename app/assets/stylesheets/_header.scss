@@ -39,8 +39,10 @@
     width: 70%;
     #header-buttons {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
+      width: 100%;
       #create {
+        width: 150px;
         a {
           border: 1px solid #CCC;
           border-radius: 20px;
@@ -50,6 +52,40 @@
         }
         a:hover {
           background-color: lightgreen;
+        }
+      }
+      #user {
+        ul#dropmenu {
+          li {
+            width: 100px;
+            text-align: right;
+            img {
+              width: 35px;
+              height: 35px;
+              vertical-align: middle;
+            }
+            ul {
+              display: none;
+            }
+            &:hover {
+              width: 100px;
+              ul {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background-color: #fff;
+                width: 100%;
+                text-align: center;
+                box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.4);
+                li {
+                  background-color: #fff;
+                  text-align: center;
+                  line-height: 3;
+                }
+              }
+            }
+          }
         }
       }
     }
