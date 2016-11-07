@@ -5,12 +5,8 @@
         = link_to image_tag('logo.svg'), root_path
       #header-nav
         %ul
-          %li
-            - if user_signed_in?
-              = link_to "ログアウト", destroy_user_session_path, method: :delete
-            - else
-              = link_to "ログイン", new_user_session_path
-          %li= link_to "投稿記事一覧", stories_path
+          %li= link_to "新着一覧", "#"
+          %li= link_to "PR Tableとは？", "#"
     .right
       #header-buttons
         #create
@@ -20,4 +16,12 @@
             = link_to "ストーリーを作成", new_user_session_path
         #user
           - if user_signed_in?
-            = link_to "ユーザー編集", profile_path
+            %ul#dropmenu
+              %li
+                = image_tag current_user.company.logo
+                %ul
+                  %li= link_to "基本情報設定", profile_path
+                  %li= link_to "投稿一覧", stories_path
+                  %li= link_to "ログアウト", destroy_user_session_path, method: :delete
+          - else
+            = link_to "ログイン", new_user_session_path
