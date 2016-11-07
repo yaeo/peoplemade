@@ -3,10 +3,64 @@
   = render 'shared/header'
   - breadcrumb :company, @company
   = breadcrumbs separator: " &gt; "
-  .cover-image{style: "background-image: url(#{asset_path(@company.cover_image)});"}
+  #company-cover-image{style: "background-image: url(#{asset_path(@company.cover_image)});"}
   .single-column-wrap
-    .header
+    #company-header
+      =image_tag @company.logo
       %h1= @company.name
-    #edit-story-list
-      = render partial: 'shared/edit_story_list', collection: @edit_story_lists
+    #comapny-stories
+      %article
+        = link_to "#" do
+          .content
+            .content__image{style: "background-image: url(#{asset_path(@company.user.stories[0].topics[0].image)});"}
+            .content__title= @company.user.stories[0].title
+      %article
+        = link_to "#" do
+          .content
+            .content__image{style: "background-image: url(#{asset_path(@company.user.stories[0].topics[0].image)});"}
+            .content__title= @company.user.stories[0].title
+      %article
+        = link_to "#" do
+          .content
+            .content__image{style: "background-image: url(#{asset_path(@company.user.stories[0].topics[0].image)});"}
+            .content__title= @company.user.stories[0].title
+      %article
+        = link_to "#" do
+          .content
+            .content__image{style: "background-image: url(#{asset_path(@company.user.stories[0].topics[0].image)});"}
+            .content__title= @company.user.stories[0].title
+      %article
+        = link_to "#" do
+          .content
+            .content__image{style: "background-image: url(#{asset_path(@company.user.stories[0].topics[0].image)});"}
+            .content__title= @company.user.stories[0].title
+      %article
+        = link_to "#" do
+          .content
+            .content__image{style: "background-image: url(#{asset_path(@company.user.stories[0].topics[0].image)});"}
+            .content__title= @company.user.stories[0].title
+    #company-info
+      %h2 会社・団体概要
+      .detail
+        %dl
+          %dt 社名
+          %dd 会社名だよー
+        %dl
+          %dt 会社・団体説明
+          %dd 会社・団体説明だよー会社・団体説明だよー会社・団体説明だよー会社・団体説明だよー会社・団体説明だよー会社・団体説明だよー
+        %dl
+          %dt 代表者
+          %dd 代表者名だよー
+        %dl
+          %dt 設立年月日
+          %dd 設立年月日だよー
+        %dl
+          %dt 住所
+          %dd 住所だよー
+        %dl
+          %dt ビジョン・ミッション
+          %dd ビジョン・ミッションだよー
+        %dl
+          %dt URL
+          %dd URLだよー
   = render 'shared/footer'
