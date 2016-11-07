@@ -9,36 +9,7 @@
       =image_tag @company.logo
       %h1= @company.name
     #comapny-stories
-      %article
-        = link_to "#" do
-          .content
-            .content__image{style: "background-image: url(#{asset_path(@company.user.stories[0].topics[0].image)});"}
-            .content__title= @company.user.stories[0].title
-      %article
-        = link_to "#" do
-          .content
-            .content__image{style: "background-image: url(#{asset_path(@company.user.stories[0].topics[0].image)});"}
-            .content__title= @company.user.stories[0].title
-      %article
-        = link_to "#" do
-          .content
-            .content__image{style: "background-image: url(#{asset_path(@company.user.stories[0].topics[0].image)});"}
-            .content__title= @company.user.stories[0].title
-      %article
-        = link_to "#" do
-          .content
-            .content__image{style: "background-image: url(#{asset_path(@company.user.stories[0].topics[0].image)});"}
-            .content__title= @company.user.stories[0].title
-      %article
-        = link_to "#" do
-          .content
-            .content__image{style: "background-image: url(#{asset_path(@company.user.stories[0].topics[0].image)});"}
-            .content__title= @company.user.stories[0].title
-      %article
-        = link_to "#" do
-          .content
-            .content__image{style: "background-image: url(#{asset_path(@company.user.stories[0].topics[0].image)});"}
-            .content__title= @company.user.stories[0].title
+      =render partial: 'shared/company_story', collection: @company_stories
     #company-info
       %h2 会社・団体概要
       .detail
