@@ -14,6 +14,7 @@ gem 'devise'
 gem 'jp_prefecture'
 gem 'carrierwave', '1.0.0.beta', '< 2.0'
 gem "gretel"
+gem 'medium-editor-rails'
 
 group :development, :test do
   gem 'byebug'
