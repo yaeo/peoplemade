@@ -30,8 +30,38 @@
           %p.note このストーリーの全体概要を簡潔に、かつ読者の興味を引くようにご説明ください。（会社・団体の視点）
           .field__form
             = f.text_area :intro, placeholder: "150文字以内（ストーリー概要など）"
-      - 4.times do |n|
-        = render partial: 'shared/new-topic', locals: { title: n+1, f: f }
+      %section.topic
+        %h2= "つめのトピック"
+        = f.fields_for :topics do |topic|
+          .image-selector-heading
+            .image-selector-heading__image-type
+              %ul
+                %li 画像
+                %li.movie 動画
+            .image-selector-heading__image-point
+              =link_to "画像の選定基準について", "#"
+          .image-selector-main
+            .image-selector-main__regulation
+              = image_tag 'image-selector-main.png', id: "image"
+            .image-selector-main__selector
+              %span 画像を選択
+              %small （3MB以下のファイルをご使用ください）
+              = topic.file_field :image, class: "image-selector"
+            .image-selector-main__caption
+              = topic.text_field :caption, placeholder: "画像/動画の説明を入力してください"
+          .field
+            .field__label
+              = topic.label :heading, "見出し"
+              %span.rule 35文字以内
+            %p.note このトピックの訴求点が伝わる、見出しをつけてください。
+            .field__form
+              = topic.text_field :heading, placeholder: "見出し"
+          .field
+            .field__label
+              = topic.label :content, "本文"
+            .field__form
+              = topic.hidden_field :content, id: "topic_content"
+              .editable{"data-field-id" => "content"}= @story.topics[0].content
       %section#submit
         .announce ステークホルダーに配慮した表現等のチェックはお済みですか?
         .check
@@ -41,3 +71,12 @@
         =f.submit "下書き保存", id: "js-save-as-draft"
         =f.submit "ストーリーを保存して、PR Table編集部に最終確認を申請する", id: "js-save-as-inreview"
   = render 'shared/footer'
+
+  :javascript
+    var editor = new MediumEditor('.editable', {
+      autoLink: true,
+      anchorPreview: {
+        hideDelay: 500,
+        previewValueSelector: 'a'
+      }
+    });
