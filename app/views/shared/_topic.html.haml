@@ -3,4 +3,5 @@
   %figure.image
     = image_tag(topic.image)
     %figcaption= topic.caption
-  .topic-body= sanitize(topic.content, tags: %w(\r\n \r \n)).gsub(/(\r\n|\r|\n)/, "<br>").html_safe
+  -# .topic-body= sanitize(topic.content, tags: %w(\r\n \r \n)).gsub(/(\r\n|\r|\n)/, "<br>").html_safe
+  .topic-body= sanitize(topic.content)

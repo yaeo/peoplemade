@@ -14,6 +14,9 @@ gem 'devise'
 gem 'jp_prefecture'
 gem 'carrierwave', '1.0.0.beta', '< 2.0'
 gem "gretel"
+gem 'underscore-rails'
+gem 'rails-sanitize-js'
+gem "dante-editor"
 
 group :development, :test do
   gem 'byebug'
