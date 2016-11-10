@@ -1,32 +1,47 @@
 %section.topic
-  - @story.topics.each.with_index(1) do |topic, i|
-    = f.fields_for :topics, topic do |t|
-      %h2= "#{i}つめのトピック"
-      .image-selector-heading
-        .image-selector-heading__image-type
-          %ul
-            %li 画像
-            %li.movie 動画
-        .image-selector-heading__image-point
-          =link_to "画像の選定基準について", "#"
-      .image-selector-main
-        .image-selector-main__regulation
-          = image_tag 'image-selector-main.png', id: "-image"
-        .image-selector-main__selector
-          %span 画像を選択
-          %small （3MB以下のファイルをご使用ください）
-          = t.file_field :image, class: "image-selector"
-        .image-selector-main__caption
-          = t.text_field :caption, placeholder: "画像/動画の説明を入力してください"
-      .field
-        .field__label
-          = t.label :heading, "見出し"
-          %span.rule 35文字以内
-        %p.note このトピックの訴求点が伝わる、見出しをつけてください。
-        .field__form
-          = t.text_field :heading, placeholder: "見出し"
-      .field
-        .field__label
-          = t.label :content, "本文"
-        .field__form
-          = t.text_area :content, placeholder: "本文"
+  = f.fields_for :topics do |t|
+    -# %h2= "#{i}つめのトピック"
+    -# .image-selector-heading
+    -#   .image-selector-heading__image-type
+    -#     %ul
+    -#       %li 画像
+    -#       %li.movie 動画
+    -#   .image-selector-heading__image-point
+    -#     =link_to "画像の選定基準について", "#"
+    -# .image-selector-main
+    -#   .image-selector-main__regulation
+    -#     = image_tag 'image-selector-main.png', id: "-image"
+    -#   .image-selector-main__selector
+    -#     %span 画像を選択
+    -#     %small （3MB以下のファイルをご使用ください）
+    -#     = t.file_field :image, class: "image-selector"
+    -#   .image-selector-main__caption
+    -#     = t.text_field :caption, placeholder: "画像/動画の説明を入力してください"
+    -# .field
+    -#   .field__label
+    -#     = t.label :heading, "見出し"
+    -#     %span.rule 35文字以内
+    -#   %p.note このトピックの訴求点が伝わる、見出しをつけてください。
+    -#   .field__form
+    -#     = t.text_field :heading, placeholder: "見出し"
+    .field
+      .field__label
+        = t.label :content, "本文"
+      .field__form
+        = t.hidden_field :content, placeholder: "本文", id: "topic_content"
+#editor{"data-field-id" => "content"}
+  =@story.topics[0].content.try (:html_safe)
+
+:javascript
+  editor = new Dante.Editor(
+    {
+      el: "#editor",
+      upload_url: "/uploads.json", //it expect an url string in response like /your/server/image.jpg or http://app.com/images/image.jpg
+      disable_title: "true",
+      upload_callback: function(data)
+        {
+            return data.link;
+        },
+    }
+  );
+  editor.start()
