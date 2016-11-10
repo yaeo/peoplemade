@@ -9,6 +9,9 @@
           %li= link_to "PR Tableとは？", "#"
     .right
       #header-buttons
+        - if controller.controller_name == "stories" && controller.action_name == "show"
+          #edit-stoy
+            = link_to "このストーリーを編集", edit_story_path(@story)
         #create
           - if user_signed_in?
             = link_to "ストーリーを作成", new_story_path
