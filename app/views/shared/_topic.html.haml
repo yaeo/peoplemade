@@ -1,7 +1,7 @@
 %section.topic
-  %h2= topic.heading
-  %figure.image
-    = image_tag(topic.image)
-    %figcaption= topic.caption
+  -# %h2= topic.heading
+  -# %figure.image
+  -#   = image_tag(topic.image)
+  -#   %figcaption= topic.caption
   -# .topic-body= sanitize(topic.content, tags: %w(\r\n \r \n)).gsub(/(\r\n|\r|\n)/, "<br>").html_safe
-  .topic-body= sanitize(topic.content)
+  .topic-body= story.content
