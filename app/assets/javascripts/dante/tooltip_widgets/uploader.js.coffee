@@ -88,7 +88,6 @@ class Dante.View.TooltipWidget.Uploader extends Dante.View.TooltipWidget
 
       #TODO: upload file to server
       #@uploadFile file, replaced_node
-
       figure.find("img").attr("src", image_element.src)
 
   displayAndUploadImages: (file)->
@@ -236,12 +235,12 @@ class Dante.View.TooltipWidget.Uploader extends Dante.View.TooltipWidget
     # this is not needed here since we are handling backspace for images in image behavior
     ###
     utils.log "handleBackspaceKey on uploader widget"
-   
+
     # remove graf figure if is selected but not in range (not focus on caption)
     if $(node).hasClass("is-selected") && $(node).hasClass("graf--figure")
       # exit if selection is on caption
       anchor_node = @current_editor.selection().anchorNode
-      
+
       # return false unless backspace is in the first char
       if ( anchor_node? && $(anchor_node.parentNode).hasClass("imageCaption"))
         if @current_editor.isFirstChar()
