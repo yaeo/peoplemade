@@ -66,6 +66,11 @@
           }
         }
       }
+      .topic-body {
+        margin-top: 60px;
+        font-size: 18px;
+        line-height: 1.7;
+      }
       .story-footer {
         margin-top: 60px;
         .info {
@@ -158,10 +163,11 @@
           }
           .other-story {
             display: flex;
+            flex-wrap: wrap;
             padding: 20px;
             article {
               margin-right: 20px;
-              width: calc(100% / 3);
+              width: 30%;
               a {
                 .story-image {
                   background-size: cover;

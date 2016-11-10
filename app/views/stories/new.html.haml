@@ -24,14 +24,29 @@
             = f.text_field :title, placeholder: "40文字以内"
         .field
           .field__label
-            = f.label :intro, "リード"
+            = f.label :intro, "イントロ"
             %span.must 必須
             %span.rule 150文字以内
           %p.note このストーリーの全体概要を簡潔に、かつ読者の興味を引くようにご説明ください。（会社・団体の視点）
           .field__form
             = f.text_area :intro, placeholder: "150文字以内（ストーリー概要など）"
-      - 4.times do |n|
-        = render partial: 'shared/new-topic', locals: { title: n+1, f: f }
+      %section#content
+        .image-selector-main
+          .image-selector-main__regulation
+            = image_tag 'image-selector-main.png', id: "0-image"
+          .image-selector-main__selector
+            %span 画像を選択
+            %small （3MB以下のファイルをご使用ください）
+            = f.file_field :image, class: "image-selector"
+        %label.title 本文
+        %span.must 必須
+        .field
+          .field__label
+            = f.label :content, "文章を範囲選択後「H2」をクリックすると、見出しになります"
+          .field__form
+            = f.hidden_field :content, placeholder: "本文", id: "topic_content"
+      #editor{"data-field-id" => "content"}
+        =@story.topics[0].content.try (:html_safe)
       %section#submit
         .announce ステークホルダーに配慮した表現等のチェックはお済みですか?
         .check
@@ -41,3 +56,19 @@
         =f.submit "下書き保存", id: "js-save-as-draft"
         =f.submit "ストーリーを保存して、PR Table編集部に最終確認を申請する", id: "js-save-as-inreview"
   = render 'shared/footer'
+
+:javascript
+  editor = new Dante.Editor(
+    {
+      el: "#editor",
+      upload_url: "/uploads.json", //it expect an url string in response like /your/server/image.jpg or http://app.com/images/image.jpg
+      disable_title: "true",
+      upload_callback: function(data)
+        {
+            return data.link;
+        },
+      body_placeholder: "<strong style='font-size: 35px;'>父の死、一家離散……10歳から仕事に励んだ、創業者・恒策の壮絶な幼少期</strong><br><br>山田車体工業のルーツをたどると、創業者である山田恒策（1913-2009 ）の幼き日々にたどりつきます。<br><br>現在からさかのぼること、およそ100年。大正2（1913）年に静岡県田方郡川西村（現・伊豆の国市）で生まれた恒策は、農業をするかたわら竹の加工の仕事をする父、母、ふたりの弟、そして祖母の6人家族の中で育ちました。どこにでもある普通の家庭。両親そして祖母の愛を受け、すくすく成長していきます。<br><br>しかし恒策が6歳の時、父が突如として帰らぬ人に……。享年36歳。心臓マヒだったそうです。<br><br>父の若すぎる旅立ちは、残された家族の生活を一変させました。その4年後、家の物置小屋から火事を出したことをきっかけに、一家は離散。大人たちの話し合いによって、恒策は母の姉である伯母の婚家、加藤家に預けられることになりました。<br><br>しかし加藤家は、10人もの子どもを抱えた大家族。家計は常に火の車で、実子ではない恒策は、味噌汁、たくわん一切れにも不自由する生活を強いられていました。<br><br>そしてわずか10歳のときから、加藤家の仕事だった荷馬車づくりを手伝うことに。恒策には遠足や海水浴といった小学校の行事を楽しんだり、学校終わりに友達と遊んだりする自由な時間は許されませんでした。夜なべは当たり前。休日もままならず、小遣いを手にすることもなく、ひたすら車輪をつくり続ける……。そんな毎日が、20歳を迎えるまで続いたのです。<br><br>「私の立場は弱く、思い返すと思考停止してしまいそうになる。絶望ということすら自覚できないまま全身を動かし働き続けた」――恒策が晩年にみずから記した自分史『わが人生 弥勒路より』（2007年発行）には、当時を振り返ったこんな言葉がつづられています。<br><br>恒策は子どもらしいことを何一つできぬまま、進学もあきらめ、毎日真っ黒になりながら、加藤家で荷馬車の車輪づくりや自動車の修理に明け暮れました。しかしそんな苦難の日々を積み重ねるなかで、恒策はいつしか高い技術を身につけていくことになります。それと同時に、胸の内に秘めた職人気質も磨かれていったのでしょう。<br><br>たとえどんな苦境に立たされても、強い心を宿して努力し続け、後に自分の工場を持つまでになるのだから……。",
+      base_widgets: "uploader",
+    }
+  );
+  editor.start()

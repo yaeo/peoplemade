@@ -2,7 +2,8 @@
   .hover
     %mark 下書き
     = link_to edit_story_path(edit_story_list) do
-      .story-image{style: "background-image: url(#{asset_path(edit_story_list.topics[0].image)});"}
+      -# .story-image{style: "background-image: url(#{asset_path(edit_story_list.topics[0].image)});"}
+      .story-image{style: "background-image: url(#{asset_path(edit_story_list.image)});"}
       %p= edit_story_list.title
   .tools
     %ul#tools

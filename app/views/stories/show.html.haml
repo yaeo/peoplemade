@@ -25,7 +25,7 @@
               = link_to "B!", "#"
             %li.pocket
               = link_to "P", "#"
-        = render partial: 'shared/topic', collection: @story.topics
+        .topic-body= @story.content.html_safe
         %section.story-footer
           .socials
             %ul
@@ -61,7 +61,7 @@
                     %li
                       =link_to "取材したい", "#", class:"coverage"
             .other-story
-              - @story.user.stories.each do |story|
+              - @story.user.stories.published.each do |story|
                 %article
                   = link_to story_path(story) do
                     .story-image{style: "background-image: url(#{asset_path(story.image)});"}

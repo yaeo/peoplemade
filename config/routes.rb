@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get "profile", :to => 'users#edit'
   resources :users, only: [:update]
   get ':custom_url', :to => 'companies#show', as: 'company'
+  resources :uploads, only: [:create]
 end
