@@ -13,5 +13,5 @@
   .tools
     %ul#tools
       %li= link_to "編集", edit_story_path(edit_story_list)
-      %li= link_to "下書き", "#"
+      -# %li= link_to "下書き", "#"
       %li= link_to "削除", story_path(edit_story_list), method: :delete, data: { confirm: "本当に削除しますか？"}

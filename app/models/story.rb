@@ -28,7 +28,7 @@ class Story < ApplicationRecord
     self.user.company.cover_image
   end
 
-  # def image
-  #   self.topics[0].image
-  # end
+  def custom_url
+    self.user.company.custom_url
+  end
 end

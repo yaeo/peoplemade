@@ -20,8 +20,8 @@
               %li
                 = image_tag current_user.company.logo
                 %ul
-                  %li= link_to "基本情報設定", profile_path
-                  %li= link_to "投稿一覧", stories_path
+                  %li= link_to "ストーリーの編集", stories_path
+                  %li= link_to "会社情報設定", profile_path
                   %li= link_to "ログアウト", destroy_user_session_path, method: :delete
           - else
             = link_to "ログイン", new_user_session_path
