@@ -158,10 +158,11 @@
           }
           .other-story {
             display: flex;
+            flex-wrap: wrap;
             padding: 20px;
             article {
               margin-right: 20px;
-              width: calc(100% / 3);
+              width: 30%;
               a {
                 .story-image {
                   background-size: cover;
