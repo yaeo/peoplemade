@@ -48,8 +48,9 @@
           .field__label
             = f.label :content, "本文"
             %span.must 必須
-          %p.note 文章を範囲選択後「H2」をクリックすると、見出しになります。
-          %p.note 「＋」ボタンを押して、「カメラ」ボタンを選択すると画像を追加することができます。
+          %p.note ・文章を範囲選択後「H2」をクリックすると、見出しになります。
+          %p.note ・「＋」ボタンを押して、「カメラ」ボタンを選択すると画像を追加することができます。
+          %p.note ・Wordなどで作成した画像入りの文章をそのまま貼り付けることもできます。
           .field__form
             = f.hidden_field :content, placeholder: "本文", id: "topic_content"
       #editor{"data-field-id" => "content"}

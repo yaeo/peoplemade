@@ -41,6 +41,7 @@ class StoriesController < ApplicationController
 
   def destroy
     @story.update(status: "deleted")
+    redirect_to stories_url
   end
 
   private
