@@ -8,7 +8,11 @@
         = render partial: 'shared/list_story', collection: @list_stories
       = render 'shared/more'
     #side-menu
-      = render 'shared/recommend-stories'
+      %section#recommend-stories
+        .container
+          %h2 注目のストーリー
+          .stories
+            = render partial: 'shared/recommend_story', collection: @recommends_stories
       = render 'shared/recommend-topic'
       = render 'shared/company-list'
       = render 'shared/banner'

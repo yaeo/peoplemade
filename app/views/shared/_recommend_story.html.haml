@@ -1,0 +1,7 @@
+%article
+  = link_to story_path(recommend_story) do
+    .info
+      .image{style: "background-image: url(#{asset_path(recommend_story.image)});"}
+      .story
+        .story__title= recommend_story.title
+        .story__company= recommend_story.company_name
