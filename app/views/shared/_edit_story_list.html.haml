@@ -1,6 +1,11 @@
 %article
   .hover
-    %mark 下書き
+    - if edit_story_list.draft?
+      %mark 下書き
+    - elsif edit_story_list.published?
+      %mark 公開中
+    - elsif edit_story_list.inreview?
+      %mark 審査中
     = link_to edit_story_path(edit_story_list) do
       -# .story-image{style: "background-image: url(#{asset_path(edit_story_list.topics[0].image)});"}
       .story-image{style: "background-image: url(#{asset_path(edit_story_list.image)});"}
