@@ -15,5 +15,8 @@ section.topic {
   .topic-body {
     font-size: 18px;
     line-height: 1.7;
+    .graf-image {
+      position: relative;
+    }
   }
 }
