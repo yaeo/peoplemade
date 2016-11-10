@@ -60,7 +60,10 @@
           =link_to "チェック項目を見る"
         =f.hidden_field :user_id, value: current_user.id
         =f.hidden_field :status, value: @story.status
-        =f.submit "下書き保存", id: "js-save-as-draft"
+        - if @story.published?
+          =f.submit "編集して公開", id: "js-save-as-published"
+        - else
+          =f.submit "下書き保存", id: "js-save-as-draft"
         =f.submit "ストーリーを保存して、PR Table編集部に最終確認を申請する", id: "js-save-as-inreview"
   = render 'shared/footer'
 
