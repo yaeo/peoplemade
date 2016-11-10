@@ -1,0 +1,5 @@
+.company
+  = link_to root_path do
+    .info
+      .image{style: "background-image: url(#{asset_path(company_list.logo)});"}
+      .name= company_list.name
