@@ -53,7 +53,7 @@
           .field__form
             = f.hidden_field :content, placeholder: "本文", id: "topic_content"
       #editor{"data-field-id" => "content"}
-        =@story.topics[0].content.try (:html_safe)
+        =@story.content.try (:html_safe)
       %section#submit
         .announce ステークホルダーに配慮した表現等のチェックはお済みですか?
         .check
