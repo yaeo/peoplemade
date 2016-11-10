@@ -61,10 +61,13 @@
         =f.hidden_field :user_id, value: current_user.id
         =f.hidden_field :status, value: @story.status
         - if @story.published?
-          =f.submit "編集して公開", id: "js-save-as-published"
+          =f.submit "編集を保存して公開", id: "js-save-as-published"
+        - elsif @story.inreview?
+          =f.submit "下書きに戻す", id: "js-save-as-draft"
+          =f.submit "編集を保存", id: "js-save-as-inreview"
         - else
           =f.submit "下書き保存", id: "js-save-as-draft"
-        =f.submit "ストーリーを保存して、PR Table編集部に最終確認を申請する", id: "js-save-as-inreview"
+          =f.submit "ストーリーを保存して、PR Table編集部に最終確認を申請する", id: "js-save-as-inreview"
   = render 'shared/footer'
 
 :javascript
