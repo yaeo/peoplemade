@@ -1,16 +1,20 @@
 class Story < ApplicationRecord
   #validation
-  validates :title, presence: true
-  validates :intro, presence: true
-  validates :status, presence: true
+  validates :title,   presence: true
+  validates :intro,   presence: true
+  validates :content, presence: true
+  validates :status,  presence: true
 
   #association
   belongs_to  :user
   has_many    :topics
-
   accepts_nested_attributes_for :topics
 
+  #enum status
   enum status: { draft: 0, inreview: 1, published: 2, deleted: 4}
+
+  #carrierwave uploader
+  mount_uploader :image, ImageUploader
 
   def company_name
     self.user.company.name
@@ -24,7 +28,7 @@ class Story < ApplicationRecord
     self.user.company.cover_image
   end
 
-  def image
-    self.topics[0].image
-  end
+  # def image
+  #   self.topics[0].image
+  # end
 end
