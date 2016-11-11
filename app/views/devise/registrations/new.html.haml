@@ -1,0 +1,26 @@
+
+#wrap
+  = render 'shared/header'
+  #devise-container
+    .inner-container
+      %h2 新規アカウント登録
+      %p 本サービスは企業・団体向けサービスです。
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = devise_error_messages!
+        .field
+          = f.label :email, class: "hidden"
+          %br/
+          = f.email_field :email, autofocus: true, class: "wide", placeholder: "メールアドレス"
+        .field
+          = f.label :password, class: "hidden"
+          %br/
+          = f.password_field :password, autocomplete: "off", class: "wide", placeholder: "パスワード"
+        .field
+          = f.label :password_confirmation, class: "hidden"
+          %br/
+          = f.password_field :password_confirmation, autocomplete: "off", class: "wide", placeholder: "パスワード（確認）"
+        .actions
+          = f.submit "新規登録"
+      .links
+        = render "devise/shared/links"
+  = render 'shared/footer'

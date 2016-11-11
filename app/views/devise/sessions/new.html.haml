@@ -1,0 +1,20 @@
+- provide(:title, "ログイン｜PR Table")
+#wrap
+  = render 'shared/header'
+  #devise-container
+    .inner-container
+      %h2 ログイン
+      = form_for resource, as: resource_name, url: session_path(resource_name) do |f|
+        .field
+          = f.label :email, class: "hidden"
+          %br/
+          = f.email_field :email, autofocus: true, class: "wide", placeholder: "メールアドレス"
+        .field
+          = f.label :password, class: "hidden"
+          %br/
+          = f.password_field :password, autocomplete: "off", class: "wide", placeholder: "パスワード"
+        .actions
+          = f.submit "ログイン"
+      .links
+        = render "devise/shared/links"
+  = render 'shared/footer'
