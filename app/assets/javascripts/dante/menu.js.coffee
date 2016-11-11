@@ -38,7 +38,7 @@ class Dante.Editor.Menu extends Dante.View
     ###
 
     # buttons: ['bold', 'italic', 'createlink', 'divider', 'h3', 'h4', 'blockquote']
-    buttons: ['bold', 'createlink', "h4"]
+    buttons: ['bold', 'createlink', 'h4', 'blockquote']
 
   template: ()=>
     html = "<div class='dante-menu-linkinput'><input class='dante-menu-input' placeholder='URLを入力してください'><div class='dante-menu-button'>x</div></div>"

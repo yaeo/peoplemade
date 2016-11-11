@@ -7,4 +7,7 @@ $(document).on('turbolinks:load', function() {
   $('#js-save-as-inreview').on('click', function() {
     $('#story_status').attr('value', "inreview");
   });
+  $('#js-save-as-published').on('click', function() {
+    $('#story_status').attr('value', "published");
+  });
 });

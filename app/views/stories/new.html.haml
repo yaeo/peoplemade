@@ -30,31 +30,48 @@
           %p.note このストーリーの全体概要を簡潔に、かつ読者の興味を引くようにご説明ください。（会社・団体の視点）
           .field__form
             = f.text_area :intro, placeholder: "150文字以内（ストーリー概要など）"
-      %section#content
+      %section.image#content
+        .field
+          .field__label
+            = f.label :image, "表紙画像"
+            %span.must 必須
+          %p.note トップページなどに表示される表紙画像を設定してくだい。
         .image-selector-main
           .image-selector-main__regulation
-            = image_tag 'image-selector-main.png', id: "0-image"
+            - if @story.image.blank?
+              = image_tag 'image-selector-main.png', id: "regulation-image"
+            - else
+              = image_tag @story.image, id: "regulation-image"
           .image-selector-main__selector
             %span 画像を選択
             %small （3MB以下のファイルをご使用ください）
             = f.file_field :image, class: "image-selector"
-        %label.title 本文
-        %span.must 必須
+      %section#content
         .field
           .field__label
-            = f.label :content, "文章を範囲選択後「H2」をクリックすると、見出しになります"
+            = f.label :content, "本文"
+            %span.must 必須
+          %p.note ・文章を範囲選択後「H2」をクリックすると、見出しになります。
+          %p.note ・「＋」ボタンを押して、「カメラ」ボタンを選択すると画像を追加することができます。
+          %p.note ・Wordなどで作成した画像入りの文章をそのまま貼り付けることもできます。
           .field__form
             = f.hidden_field :content, placeholder: "本文", id: "topic_content"
       #editor{"data-field-id" => "content"}
-        =@story.topics[0].content.try (:html_safe)
+        =@story.content.try (:html_safe)
       %section#submit
         .announce ステークホルダーに配慮した表現等のチェックはお済みですか?
         .check
           =link_to "チェック項目を見る"
         =f.hidden_field :user_id, value: current_user.id
         =f.hidden_field :status, value: @story.status
-        =f.submit "下書き保存", id: "js-save-as-draft"
-        =f.submit "ストーリーを保存して、PR Table編集部に最終確認を申請する", id: "js-save-as-inreview"
+        - if @story.published?
+          =f.submit "編集を保存して公開", id: "js-save-as-published"
+        - elsif @story.inreview?
+          =f.submit "下書きに戻す", id: "js-save-as-draft"
+          =f.submit "編集を保存", id: "js-save-as-inreview"
+        - else
+          =f.submit "下書き保存", id: "js-save-as-draft"
+          =f.submit "ストーリーを保存して、PR Table編集部に最終確認を申請する", id: "js-save-as-inreview"
   = render 'shared/footer'
 
 :javascript

@@ -55,7 +55,7 @@
                         = image_tag(@story.company_logo)
                       .figcaption= @story.company_name
                   .link
-                    = link_to "> この会社について", "#"
+                    = link_to "> この会社について", company_path(@story.custom_url)
                 .buttons
                   %ul
                     %li

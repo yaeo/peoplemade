@@ -9,6 +9,10 @@
           %li= link_to "PR Tableとは？", "#"
     .right
       #header-buttons
+        - if controller.controller_name == "stories" && controller.action_name == "show"
+          - if user_signed_in? && @story.user.id == current_user.id
+            #edit-stoy
+              = link_to "このストーリーを編集", edit_story_path(@story)
         #create
           - if user_signed_in?
             = link_to "ストーリーを作成", new_story_path
@@ -20,8 +24,8 @@
               %li
                 = image_tag current_user.company.logo
                 %ul
-                  %li= link_to "基本情報設定", profile_path
-                  %li= link_to "投稿一覧", stories_path
+                  %li= link_to "ストーリーの編集", stories_path
+                  %li= link_to "会社情報設定", profile_path
                   %li= link_to "ログアウト", destroy_user_session_path, method: :delete
           - else
             = link_to "ログイン", new_user_session_path

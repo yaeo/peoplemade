@@ -11,7 +11,7 @@ class Story < ApplicationRecord
   accepts_nested_attributes_for :topics
 
   #enum status
-  enum status: { draft: 0, inreview: 1, published: 2, deleted: 4}
+  enum status: { draft: 0, inreview: 1, published: 2, deleted: 3}
 
   #carrierwave uploader
   mount_uploader :image, ImageUploader
@@ -28,7 +28,7 @@ class Story < ApplicationRecord
     self.user.company.cover_image
   end
 
-  # def image
-  #   self.topics[0].image
-  # end
+  def custom_url
+    self.user.company.custom_url
+  end
 end

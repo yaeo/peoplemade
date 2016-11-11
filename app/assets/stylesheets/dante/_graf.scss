@@ -122,12 +122,25 @@
 .graf--blockquote {
   font-family: $font-family-serif;
   border-left: 3px solid rgba(0, 0, 0, 0.8);
+  background-color: #eee;
   font-style: italic;
   font-weight: 400;
   letter-spacing: 0.01rem;
-  margin-left: -23px;
+  // margin-left: -23px;
   padding-bottom: 3px;
-  padding-left: 20px;
+  padding: 10px 10px 10px 60px;
+  position: relative;
+  border-radius: 5px;
+}
+.graf--blockquote:before{
+content:"“";
+font-size:600%;
+line-height:1em;
+font-family:"ＭＳ Ｐゴシック",sans-serif;
+color:#fff;
+position:absolute;
+left:0;
+top:0;
 }
 .graf--blockquote + .graf--blockquote {
   margin-top: -30px;
