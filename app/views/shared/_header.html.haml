@@ -22,7 +22,10 @@
           - if user_signed_in?
             %ul#dropmenu
               %li
-                = image_tag current_user.company.logo
+                - if current_user.company.nil?
+                  = image_tag("company-logo.png")
+                - else
+                  = image_tag current_user.company.logo
                 %ul
                   %li= link_to "ストーリーの編集", stories_path
                   %li= link_to "会社情報設定", profile_path
