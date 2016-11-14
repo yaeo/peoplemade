@@ -27,5 +27,6 @@
           .field__form
             = f.text_field :url, placeholder: "この商品を購入できるオンラインショップなどのURLを貼り付けてください"
       = f.hidden_field :company_id, value: current_user.company.id
-      = f.submit
+      %section#submit
+        = f.submit "商品を登録する"
   = render 'shared/footer'
