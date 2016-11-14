@@ -1,0 +1,14 @@
+- provide(:title, "商品詳細｜PR Table")
+#wrap
+  = render 'shared/header'
+  .main-content
+    .product-image
+      %ul
+        - @product.images.each do |image|
+          %li= image_tag image.image
+    .product-description
+      .title= @product.name
+      .price= @product.price
+      .more この商品のストーリーを読む
+      .description= @product.description
+  = render 'shared/footer'
