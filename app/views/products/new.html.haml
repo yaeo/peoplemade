@@ -22,5 +22,6 @@
             = f.label :price, "希望小売価格"
           .field__form
             = f.text_field :price
+      = f.hidden_field :company_id, value: current_user.company.id
       = f.submit
   = render 'shared/footer'
