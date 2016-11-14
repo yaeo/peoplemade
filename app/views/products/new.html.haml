@@ -21,7 +21,7 @@
             .field__label
               = image.label :image, "商品の写真"
             .field__form
-              = image.file_field :image
+              = image.file_field :image, :multiple => true, name: "product[images_attributes][][image]"
         .field
           .field__label
             = f.label :price, "希望小売価格"
