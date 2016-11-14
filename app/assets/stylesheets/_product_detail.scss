@@ -1,0 +1,33 @@
+#product-detail {
+  margin-top: 60px;
+  .wrapper {
+    max-width: 1050px;
+    padding: 0 30px;
+    margin: 0px auto;
+    display: flex;
+    .left {
+      width: 60%;
+      ul {
+        li {
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+    .right {
+      width: 40%;
+      padding-left: 45px;
+      text-align: center;
+      .price {
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 20px;
+        border-bottom: 1px solid black;
+        .yen:after {
+          content: "(税込)"
+        }
+      }
+    }
+  }
+}
