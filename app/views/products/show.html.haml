@@ -1,14 +1,19 @@
 - provide(:title, "商品詳細｜PR Table")
 #wrap
   = render 'shared/header'
-  .main-content
-    .product-image
-      %ul
-        - @product.images.each do |image|
-          %li= image_tag image.image
-    .product-description
-      .title= @product.name
-      .price= @product.price
-      .more この商品のストーリーを読む
-      .description= @product.description
+  - breadcrumb :profile
+  = breadcrumbs separator: " &gt; "
+  #product-detail
+    .wrapper
+      .left
+        %ul
+          - @product.images.each do |image|
+            %li= image_tag image.image
+      .right
+        %h1.title= @product.name
+        .price
+          %span 希望小売価格
+          %span.yen= number_to_currency(@product.price, unit: "円", format: "%n%u", precision: 0 )
+        .description= sanitize(@product.description, tags: %w(\r\n \r \n)).gsub(/(\r\n|\r|\n)/, "<br>").html_safe
+        .read-story= link_to "商品ストーリーを読む", "#"
   = render 'shared/footer'
