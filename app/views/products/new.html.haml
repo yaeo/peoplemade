@@ -1,12 +1,26 @@
+- provide(:title, "商品登録｜PR Table")
 #wrap
   = render 'shared/header'
-  #add_product
-  %h2 商品登録
-  = form_for @product do |f|
-    = f.label :name "商品名"
-    = f.text_field :name
-    = f.label :description, "商品説明"
-    = f.text_area :description
-    = f.label :price
-    = f.text_field :price
+  .main-wrap
+    .instruction
+      商品を登録して、ストーリーと一緒に発表しましょう。
+    %h2 商品登録
+    = form_for @product do |f|
+      %section.form
+        .field
+          .field__label
+            = f.label :name, "商品名"
+          .field__form
+            = f.text_field :name
+        .field
+          .field__label
+            = f.label :description, "商品説明"
+          .field__form
+            = f.text_area :description
+        .field
+          .field__label
+            = f.label :price, "希望小売価格"
+          .field__form
+            = f.text_field :price
+      = f.submit
   = render 'shared/footer'
