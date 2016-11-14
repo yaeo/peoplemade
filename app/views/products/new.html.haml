@@ -3,8 +3,7 @@
   = render 'shared/header'
   .main-wrap
     .instruction
-      商品を登録して、ストーリーと一緒に発表しましょう。
-    %h2 商品登録
+      ストーリーと一緒に発表したい商品を登録
     = form_for @product do |f|
       %section.form
         .field
@@ -14,14 +13,19 @@
             = f.text_field :name
         .field
           .field__label
-            = f.label :description, "商品説明"
+            = f.label :description, "商品の説明文"
           .field__form
-            = f.text_area :description
+            = f.text_area :description, placeholder: "商品のサイズ、重さ、素材などを書いてください"
         .field
           .field__label
             = f.label :price, "希望小売価格"
           .field__form
-            = f.text_field :price
+            = f.text_field :price, placeholder: "カンマ抜きの円の価格を指定してください"
+        .field
+          .field__label
+            = f.label :url, "商品を購入できるURL（もしあれば）"
+          .field__form
+            = f.text_field :url, placeholder: "この商品を購入できるオンラインショップなどのURLを貼り付けてください"
       = f.hidden_field :company_id, value: current_user.company.id
       = f.submit
   = render 'shared/footer'
