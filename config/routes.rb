@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :users, only: [:update]
   get ':custom_url', :to => 'companies#show', as: 'company'
   resources :uploads, only: [:create]
+  resources :products, only: [:new, :create, :show]
 end
