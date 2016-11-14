@@ -1,0 +1,12 @@
+#wrap
+  = render 'shared/header'
+  #add_product
+  %h2 商品登録
+  = form_for @product do |f|
+    = f.label :name "商品名"
+    = f.text_field :name
+    = f.label :description, "商品説明"
+    = f.text_area :description
+    = f.label :price
+    = f.text_field :price
+  = render 'shared/footer'
