@@ -17,6 +17,12 @@
           .field__form
             = f.text_area :description, placeholder: "商品のサイズ、重さ、素材などを書いてください"
         .field
+          = f.fields_for :images do |image|
+            .field__label
+              = image.label :image, "商品の写真"
+            .field__form
+              = image.file_field :image
+        .field
           .field__label
             = f.label :price, "希望小売価格"
           .field__form
