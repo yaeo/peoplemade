@@ -18,14 +18,89 @@
     .right {
       width: 40%;
       padding-left: 45px;
-      text-align: center;
-      .price {
-        display: inline-block;
-        margin: 20px 0;
-        font-size: 20px;
-        border-bottom: 1px solid black;
-        .yen:after {
-          content: "(税込)"
+
+      .header {
+        text-align: center;
+        .name {
+          .title {
+            font-size: 20px;
+          }
+          span {
+            margin-top: 15px;
+            display: block;
+            font-size: 13px;
+            a:hover {
+              color: #3fa8e0;
+            }
+          }
+        }
+        .price {
+          display: inline-block;
+          margin-top: 30px;
+          font-size: 20px;
+          .yen:after {
+            content: "(税込)"
+          }
+          .small {
+            font-size: 13px;
+          }
+        }
+      }
+      .story {
+        text-align: center;
+        font-size: 13px;
+        a {
+          margin: 20px 0;
+          border: 4px solid #3fa8e0;
+          display: inline-block;
+          line-height: 30px;
+          border-radius: 20px;
+          padding: 0 20px;
+          color: #3fa8e0;
+          font-weight: bold;
+          transition: .4s;
+        }
+        a:hover {
+          background-color: #3fa8e0;
+          color: #fff;
+        }
+      }
+      .description {
+        background-color: #FAFAFA;
+        padding: 20px;
+        font-size: 13px;
+      }
+      .company {
+        margin-top: 20px;
+        padding: 20px;
+        font-size: 13px;
+        background-color: #FAFAFA;
+        .logo {
+          text-align: center;
+          img {
+            width: 150px;
+          }
+        }
+        .profile {
+          margin-top: 20px;
+        }
+        .btn {
+          text-align: center;
+          a {
+            margin: 20px 0;
+            border: 4px solid #3fa8e0;
+            display: inline-block;
+            line-height: 30px;
+            border-radius: 20px;
+            padding: 0 20px;
+            color: #3fa8e0;
+            font-weight: bold;
+            transition: .4s;
+          }
+          a:hover {
+            background-color: #3fa8e0;
+            color: #fff;
+          }
         }
       }
     }
