@@ -252,6 +252,21 @@ section#content {
   }
 }
 
+section#product {
+  .field {
+    &__form {
+      display: flex;
+      label.image {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 150px;
+        height: 150px;
+      }
+    }
+  }
+}
+
 section#submit {
   text-align: center;
   margin-top: 60px;
