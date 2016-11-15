@@ -17,6 +17,7 @@ class StoriesController < ApplicationController
   def new
     @story = Story.new
     @story.topics.build
+    @story.stories_products.build
   end
 
   def create
@@ -47,6 +48,7 @@ class StoriesController < ApplicationController
   private
     def story_params
       params.require(:story).permit(:content, :image, :title, :intro, :user_id, :status,
+        { :product_ids => [] }, 
         topics_attributes: [:id, :image, :caption, :heading, :content])
     end
 
