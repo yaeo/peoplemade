@@ -9,22 +9,30 @@
         .field
           .field__label
             = f.label :name, "商品名"
+            %span.must 必須
           .field__form
             = f.text_field :name
         .field
           .field__label
             = f.label :description, "商品の説明文"
+            %span.must 必須
           .field__form
             = f.text_area :description, placeholder: "商品のサイズ、重さ、素材などを書いてください"
-        .field
+        %section.image#content
+
           = f.fields_for :images do |image|
             .field__label
               = image.label :image, "商品の写真"
-            .field__form
-              = image.file_field :image, :multiple => true, name: "product[images_attributes][][image]"
+              %span.must 必須
+            .image-selector-main
+              .image-selector-main__selector
+                %span 画像を選択
+                %small （3MB以下のファイルをご使用ください）
+                = image.file_field :image, :multiple => true, name: "product[images_attributes][][image]", class: "image-selector"
         .field
           .field__label
             = f.label :price, "希望小売価格"
+            %span.must 必須
           .field__form
             = f.text_field :price, placeholder: "カンマ抜きの円の価格を指定してください"
         .field
