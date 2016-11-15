@@ -25,3 +25,8 @@ end
 crumb :company do |company|
   link company.name, company_path(company)
 end
+
+crumb :product do |product|
+  link product.company.name, company_path(product.company.custom_url)
+  link product.name, product_path(product)
+end

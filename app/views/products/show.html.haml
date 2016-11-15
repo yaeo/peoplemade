@@ -1,7 +1,7 @@
 - provide(:title, "商品詳細｜PR Table")
 #wrap
   = render 'shared/header'
-  - breadcrumb :profile
+  - breadcrumb :product, @product
   = breadcrumbs separator: " &gt; "
   #product-detail
     .wrapper
