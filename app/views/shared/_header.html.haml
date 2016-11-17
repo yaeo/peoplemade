@@ -18,6 +18,10 @@
             = link_to "ストーリーを作成", new_story_path
           - else
             = link_to "ストーリーを作成", new_user_session_path
+        #create-product
+          - if user_signed_in?
+            = link_to "商品を登録", new_product_path
+          - else
         #user
           - if user_signed_in?
             %ul#dropmenu
@@ -28,6 +32,7 @@
                   = image_tag current_user.company.logo
                 %ul
                   %li= link_to "ストーリーの編集", stories_path
+                  %li= link_to "商品の編集", products_path
                   %li= link_to "会社情報設定", profile_path
                   %li= link_to "ログアウト", destroy_user_session_path, method: :delete
           - else
