@@ -1,0 +1,29 @@
+- provide(:title, "商品詳細｜PR Table")
+#wrap
+  = render 'shared/header'
+  - breadcrumb :product, @product
+  = breadcrumbs separator: " &gt; "
+  #product-detail
+    .wrapper
+      .left
+        %ul
+          - @product.images.each do |image|
+            %li= image_tag image.image
+      .right
+        .header
+          .name
+            %h1.title= @product.name
+            %span= link_to @product.company.name, company_path(@product.company.custom_url)
+          .price
+            %span.small 希望小売価格
+            %span.yen= number_to_currency(@product.price, unit: "円", format: "%n%u", precision: 0 )
+        .story
+          =link_to "商品ストーリーを読む", "#"
+        .description
+          = sanitize(@product.description, tags: %w(\r\n \r \n)).gsub(/(\r\n|\r|\n)/, "<br>").html_safe
+        .company
+          .logo= link_to image_tag(@product.company.logo), company_path(@product.company.custom_url)
+          .profile= @product.company.profile
+          .btn= link_to "このブランドの詳細はこちら", company_path(@product.company.custom_url)
+
+  = render 'shared/footer'

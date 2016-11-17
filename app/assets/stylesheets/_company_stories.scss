@@ -20,7 +20,7 @@
   }
 }
 
-#comapny-stories {
+#comapny-stories, #company-products{
   margin-top: 60px;
   display: flex;
   flex-wrap: wrap;
@@ -57,6 +57,7 @@
   h2 {
     font-size: 18px;
     margin: 40px auto;
+    text-align: center;
   }
   .detail {
     dl {
@@ -75,4 +76,10 @@
       }
     }
   }
+}
+
+h2.comapay-detail {
+  text-align: center;
+  font-size: 18px;
+  margin: 40px auto;
 }

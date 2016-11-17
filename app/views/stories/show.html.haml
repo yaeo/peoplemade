@@ -6,26 +6,36 @@
   .story-container
     %main.content
       %article#story
-        .company
-          = link_to root_path do
-            .image
-              = image_tag(@story.company_logo)
-              %figcaption= @story.company_name
-        %h1= @story.title
-        .intro= @story.intro
-        .socials
-          %ul
-            %li.facebook
-              = link_to "f", "#"
-            %li.eight
-              = link_to "8", "#"
-            %li.twitter
-              = link_to "鳥", "#"
-            %li.hatena
-              = link_to "B!", "#"
-            %li.pocket
-              = link_to "P", "#"
-        .topic-body= @story.content.html_safe
+        .header
+          .company
+            = link_to company_path(@story.user.company.custom_url) do
+              .image
+                = image_tag(@story.company_logo)
+                %figcaption= @story.company_name
+          %h1= @story.title
+          .intro= @story.intro
+          .socials
+            %ul
+              %li.facebook
+                = link_to "f", "#"
+              %li.eight
+                = link_to "8", "#"
+              %li.twitter
+                = link_to "鳥", "#"
+              %li.hatena
+                = link_to "B!", "#"
+              %li.pocket
+                = link_to "P", "#"
+        %section.content
+          .topic-body= @story.content.html_safe
+          .related-products
+            %h4 ストーリーに登場する商品
+            - @products.each do |product|
+              .product
+                =link_to product_path(product) do
+                  =image_tag product.images[0].image
+                  = product.name
+                %hr.sidebar
         %section.story-footer
           .socials
             %ul

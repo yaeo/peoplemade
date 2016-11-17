@@ -4,9 +4,10 @@ class Company < ApplicationRecord
   validates :name, presence: true
   validates :kana, presence: true
   validates :logo, presence: true
-  
+
   #association
-  belongs_to :user
+  belongs_to  :user
+  has_many    :products
 
   mount_uploader :logo, ImageUploader
   mount_uploader :cover_image, ImageUploader

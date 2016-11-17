@@ -1,0 +1,46 @@
+- provide(:title, "商品登録｜PR Table")
+#wrap
+  = render 'shared/header'
+  .main-wrap
+    .instruction
+      ストーリーと一緒に発表したい商品を登録
+    = form_for @product do |f|
+      %section.form
+        .field
+          .field__label
+            = f.label :name, "商品名"
+            %span.must 必須
+          .field__form
+            = f.text_field :name
+        .field
+          .field__label
+            = f.label :description, "商品の説明文"
+            %span.must 必須
+          .field__form
+            = f.text_area :description, placeholder: "商品のサイズ、重さ、素材などを書いてください"
+        %section.image#content
+
+          = f.fields_for :images do |image|
+            .field__label
+              = image.label :image, "商品の写真"
+              %span.must 必須
+            .image-selector-main
+              .image-selector-main__selector
+                %span 画像を選択
+                %small （3MB以下のファイルをご使用ください）
+                = image.file_field :image, :multiple => true, name: "product[images_attributes][][image]", class: "image-selector"
+        .field
+          .field__label
+            = f.label :price, "希望小売価格"
+            %span.must 必須
+          .field__form
+            = f.text_field :price, placeholder: "カンマ抜きの円の価格を指定してください"
+        .field
+          .field__label
+            = f.label :url, "商品を購入できるURL（もしあれば）"
+          .field__form
+            = f.text_field :url, placeholder: "この商品を購入できるオンラインショップなどのURLを貼り付けてください"
+      = f.hidden_field :company_id, value: current_user.company.id
+      %section#submit
+        = f.submit "商品を登録する"
+  = render 'shared/footer'

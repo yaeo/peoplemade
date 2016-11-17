@@ -8,7 +8,10 @@ class Story < ApplicationRecord
   #association
   belongs_to  :user
   has_many    :topics
+  has_many    :stories_products
+  has_many    :products, through: :stories_products
   accepts_nested_attributes_for :topics
+  accepts_nested_attributes_for :stories_products
 
   #enum status
   enum status: { draft: 0, inreview: 1, published: 2, deleted: 3}
