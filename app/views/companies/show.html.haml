@@ -8,7 +8,7 @@
     #company-header
       =image_tag @company.logo
       %h1= @company.name
-    %h2 商品一覧
+    %h2.comapay-detail 商品一覧
     #company-products
       - @products.each do |product|
         %article
@@ -16,7 +16,7 @@
             .content
               .content__image{style: "background-image: url(#{asset_path(product.images[0].image)});"}
               .content__title= product.name
-    %h2 ストーリー一覧
+    %h2.comapay-detail ストーリー一覧
     #comapny-stories
       =render partial: 'shared/company_story', collection: @company_stories
     #company-info
