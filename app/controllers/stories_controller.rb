@@ -12,6 +12,7 @@ class StoriesController < ApplicationController
 
   def show
     @story = Story.find(params[:id])
+    @products = @story.products
   end
 
   def new
@@ -48,7 +49,7 @@ class StoriesController < ApplicationController
   private
     def story_params
       params.require(:story).permit(:content, :image, :title, :intro, :user_id, :status,
-        { :product_ids => [] }, 
+        { :product_ids => [] },
         topics_attributes: [:id, :image, :caption, :heading, :content])
     end
 

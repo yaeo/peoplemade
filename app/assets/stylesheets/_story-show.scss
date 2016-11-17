@@ -1,78 +1,148 @@
 .story-container {
+  width: 1280px;
   margin: 20px auto;
-  padding: 0px 20px;
   main.content {
+    padding: 0px 80px;
     article#story{
-      width: 806px;
       margin: 30px auto;
-      .company {
-        text-align: center;
-        margin-bottom: 30px;
-        img {
-          max-height: 150px;
+      .header {
+        .company {
+          text-align: center;
+          margin-bottom: 30px;
+          img {
+            max-height: 150px;
+          }
+          figcaption {
+            font-size: 13px;
+          }
         }
-        figcaption {
-          font-size: 13px;
+        h1 {
+          margin-bottom: 30px;
+          text-align: center;
         }
-      }
-      h1 {
-        margin-bottom: 30px;
-        text-align: center;
-      }
-      .intro {
-        font-size: 18px;
-        line-height: 1.8;
-        margin-bottom: 30px;
-      }
-      .socials {
-        ul {
-          display: flex;
-          justify-content: center;
-          li {
-            width: calc(100% / 5);
-            height: 40px;
-            a {
-              line-height: 40px;
-              text-align: center;
-              display: block;
-              color: #fff;
+        .intro {
+          font-size: 18px;
+          line-height: 1.8;
+          margin-bottom: 30px;
+        }
+        .socials {
+          ul {
+            display: flex;
+            justify-content: center;
+            li {
+              width: calc(100% / 5);
+              height: 40px;
+              a {
+                line-height: 40px;
+                text-align: center;
+                display: block;
+                color: #fff;
+              }
+            }
+            li.facebook {
+              background-color: #4b6ea8;
+            }
+            li.eight {
+              border: 1px solid #CCC;
+              box-sizing: border-box;
+              background-color: #FFF;
+              a {
+                 color: lightblue;
+              }
+            }
+            li.twitter {
+              background-color: #4fd5f8;
+            }
+            li.hatena {
+              background-color: #008fde;
+            }
+            li.pocket {
+              background-color: #ee4056;
+            }
+            .round {
+              border-radius: 50%;
+              height: 40px;
+              width: 40px;
+              margin: 0px 5px;
             }
           }
-          li.facebook {
-            background-color: #4b6ea8;
-          }
-          li.eight {
-            border: 1px solid #CCC;
-            box-sizing: border-box;
-            background-color: #FFF;
-            a {
-               color: lightblue;
-            }
-          }
-          li.twitter {
-            background-color: #4fd5f8;
-          }
-          li.hatena {
-            background-color: #008fde;
-          }
-          li.pocket {
-            background-color: #ee4056;
-          }
-          .round {
-            border-radius: 50%;
-            height: 40px;
-            width: 40px;
-            margin: 0px 5px;
-          }
         }
       }
-      .topic-body {
-        margin-top: 60px;
-        font-size: 18px;
-        line-height: 1.7;
+      section.content {
+        display: flex;
+        .topic-body {
+          width: 75%;
+          margin-top: 60px;
+          font-size: 18px;
+          line-height: 1.7;
+        }
+        .related-products {
+          text-align: center;
+          width: 25%;
+          margin-left: 40px;
+          margin-top: 60px;
+          background-color: #F7F7F7;
+          h4 {
+            margin-top: 20px;
+          }
+          .product {
+            padding: 0px 30px;
+            margin-top: 30px;
+            img {
+              width: 100%;
+              margin-bottom: 5px;
+            }
+            hr {
+              margin-top: 20px;
+              border: 1px solid #eee;
+            }
+          }
+        }
       }
       .story-footer {
         margin-top: 60px;
+        .socials {
+          ul {
+            display: flex;
+            justify-content: center;
+            li {
+              width: calc(100% / 5);
+              height: 40px;
+              a {
+                line-height: 40px;
+                text-align: center;
+                display: block;
+                color: #fff;
+              }
+            }
+            li.facebook {
+              background-color: #4b6ea8;
+            }
+            li.eight {
+              border: 1px solid #CCC;
+              box-sizing: border-box;
+              background-color: #FFF;
+              a {
+                 color: lightblue;
+              }
+            }
+            li.twitter {
+              background-color: #4fd5f8;
+            }
+            li.hatena {
+              background-color: #008fde;
+            }
+            li.pocket {
+              background-color: #ee4056;
+            }
+            .round {
+              border-radius: 50%;
+              height: 40px;
+              width: 40px;
+              margin: 0px 5px;
+            }
+          }
+        }
         .info {
           margin-top: 20px;
           padding-top: 20px;
