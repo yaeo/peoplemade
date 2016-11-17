@@ -252,16 +252,39 @@ section#content {
   }
 }
 
-section#product {
+section#related-product {
   .field {
+    margin-top: 50px;
+    &__label {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    p.note {
+      margin-bottom: 15px;
+    }
     &__form {
       display: flex;
-      label.image {
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        width: 150px;
-        height: 150px;
+      flex-wrap: wrap;
+      label.product {
+        width: 24%;
+        margin-right: 10px;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        &:nth-of-type(4n) {
+          margin-right: 0px;
+        }
+        .image {
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+          width: 100%;
+          height: 150px;
+          margin-bottom: 10px;
+        }
+        label {
+        }
       }
     }
   }

@@ -58,15 +58,16 @@
             = f.hidden_field :content, placeholder: "本文", id: "topic_content"
       #editor{"data-field-id" => "content"}
         =@story.content.try (:html_safe)
-      %section#product
+      %section#related-product
         .field
           .field__label
-            -# =f.label :name "登場する商品"
-            %p このストーリーと一緒に表示したい商品を選択してください
+            %label このストーリーと関連する商品
+          %p.note ストーリーと一緒に表示する商品を選択してください
           .field__form
-            = f.collection_check_boxes(:product_ids, Product.all, :id, :name) do |b|
-              %label.image{style: "background-image: url(#{asset_path(b.object.images[0].image)});"}
-                = b.label { b.check_box + b.text }
+            = f.collection_check_boxes(:product_ids, current_user.company.products, :id, :name) do |b|
+              %label.product
+                .image{style: "background-image: url(#{asset_path(b.object.images[0].image)});"}
+                =b.label { b.check_box + b.text }
       %section#submit
         .announce ステークホルダーに配慮した表現等のチェックはお済みですか?
         .check
