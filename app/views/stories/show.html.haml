@@ -8,7 +8,7 @@
       %article#story
         .header
           .company
-            = link_to root_path do
+            = link_to company_path(@story.user.company.custom_url) do
               .image
                 = image_tag(@story.company_logo)
                 %figcaption= @story.company_name
