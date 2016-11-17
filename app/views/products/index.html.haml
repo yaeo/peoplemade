@@ -1,0 +1,12 @@
+- provide(:title, "商品の編集｜PR Table")
+#wrap
+  = render 'shared/header'
+  - breadcrumb :story_list
+  = breadcrumbs separator: " &gt; "
+  .single-column-wrap
+    .header
+      %h1 商品の編集
+    %p.list-result 1件中 1-1件を表示しています。
+    #edit-story-list
+      = render partial: 'shared/edit_product_list', collection: @edit_product_lists
+  = render 'shared/footer'

@@ -1,0 +1,10 @@
+%article
+  .hover
+    = link_to edit_product_path(edit_product_list) do
+      .story-image{style: "background-image: url(#{asset_path(edit_product_list.images[0].image)});"}
+      %p= edit_product_list.name
+      %p= number_to_currency(edit_product_list.price, unit: "円", format: "%n%u", precision: 0 )
+  .tools
+    %ul#tools
+      %li= link_to "編集", edit_product_path(edit_product_list)
+      %li= link_to "削除", product_path(edit_product_list), method: :delete, data: { confirm: "本当に削除しますか？"}
