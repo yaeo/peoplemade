@@ -5,35 +5,53 @@
   flex-direction: row;
   padding-left: 40px;
   article {
-    width: calc(100% / 3);
+    width: 100%;
     .content {
       background-color: #fff;
-      height: 250px;
+      height: 150px;
       padding: 20px;
       margin-right: 20px;
       margin-top: 20px;
-      // margin-bottom: 20px;
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
       transition: 0.3s;
       &__image {
+        width: 150px;
         height: 150px;
         background-repeat: no-repeat;
         background-size: cover;
+        background-position: center;
       }
-      &__title {
-        font-size: 12.5px;
-        font-weight: bold;
-        line-height: 1.5;
+      &__body {
+        width: calc(100% - 150px);
+        margin-left: 20px;
+        display: flex;
+        flex-direction: column;
+        .title {
+          margin-bottom: 10px;
+          a {
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 1.5;
+            &:hover {
+              color: #5686ab;
+            }
+          }
+        }
+        .intro {
+          a {
+            font-size: 14px;
+            line-height: 1.3;
+          }
+        }
+        .company {
+          margin-top: auto;
+          a {
+            font-size: 13px;
+            color: #5686ab;
+            line-height: 1;
+          }
+        }
       }
-      &__company {
-        font-size: 12px;
-        line-height: 1;
-      }
-    }
-    .content:hover {
-      opacity: 0.3;
     }
   }
 }

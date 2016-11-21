@@ -1,0 +1,6 @@
+%article
+  = link_to product_path(product_list) do
+    .content
+      .content__image{style: "background-image: url(#{asset_path(product_list.images[0].image)});"}
+      .content__title= product_list.name
+      .content__company= number_to_currency(product_list.price, unit: "円", format: "%n%u", precision: 0)

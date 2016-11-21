@@ -1,6 +1,8 @@
 %article
-  = link_to story_path(list_story) do
-    .content
+  .content
+    = link_to story_path(list_story) do
       .content__image{style: "background-image: url(#{asset_path(list_story.image)});"}
-      .content__title= list_story.title
-      .content__company= list_story.company_name
+    .content__body
+      .title= link_to list_story.title, story_path(list_story)
+      .intro= link_to list_story.intro, story_path(list_story)
+      .company= link_to list_story.company_name, company_path(list_story.user.company.custom_url)

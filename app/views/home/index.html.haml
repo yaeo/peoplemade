@@ -7,6 +7,9 @@
       %section#list-stories
         = render partial: 'shared/list_story', collection: @list_stories
       = render 'shared/more'
+      %section#list-products
+        = render partial: 'shared/product_list', collection: @product_lists
+      = render 'shared/more'
     #side-menu
       %section#recommend-stories
         .container
