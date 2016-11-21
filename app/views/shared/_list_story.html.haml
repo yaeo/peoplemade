@@ -2,5 +2,7 @@
   = link_to story_path(list_story) do
     .content
       .content__image{style: "background-image: url(#{asset_path(list_story.image)});"}
-      .content__title= list_story.title
-      .content__company= list_story.company_name
+      .content__body
+        .title= list_story.title
+        .intro= list_story.intro
+        .company= list_story.company_name
