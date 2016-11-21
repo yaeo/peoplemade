@@ -4,6 +4,7 @@ class Story < ApplicationRecord
   validates :intro,   presence: true
   validates :content, presence: true
   validates :status,  presence: true
+  validates :image,  presence: true
 
   #association
   belongs_to  :user
