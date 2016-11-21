@@ -4,6 +4,9 @@ class Story < ApplicationRecord
   validates :intro,   presence: true
   validates :content, presence: true
   validates :status,  presence: true
+  validates :image,  presence: true
+  validates :title, length: { maximum: 40 }
+  validates :intro, length: { maximum: 170 }
 
   #association
   belongs_to  :user
