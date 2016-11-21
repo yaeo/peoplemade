@@ -1,5 +1,6 @@
 class StoriesController < ApplicationController
   before_action :authenticate_user!,  only: [:index, :new, :create, :edit, :update]
+  before_action :is_company_nil?,     only: [:new]
   before_action :correct_user,        only: [:edit, :update, :destroy]
   before_action :is_published?,       only: [:show]
   before_action :is_deleted?,         only: [:edit]
