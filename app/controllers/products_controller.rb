@@ -13,8 +13,14 @@ class ProductsController < ApplicationController
 
   def create
     product = Product.new(product_params)
-    product.save
-    redirect_to root_url
+    if product.save
+      flash[:notice] = "商品を登録しました。"
+      redirect_to root_url
+    else
+      flash[:alert] = "商品の保存に失敗しました。"
+      @product = Product.new(product_params)
+      render action: "new"
+    end
   end
 
   def show
@@ -28,14 +34,19 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     if @product.update(product_params)
+      flash[:notice] = "商品を編集しました。"
       redirect_to root_url
     else
-      redirect_to root_url
+      flash[:alert] = "商品の編集に失敗しました。"
+      @product = Product.find(params[:id])
+      @product.images.build
+      render action: "edit"
     end
   end
 
   def destroy
     Product.find(params[:id]).destroy
+    flash[:notice] = "商品を削除しました。"
     redirect_to products_url
   end
 
@@ -43,6 +54,6 @@ class ProductsController < ApplicationController
 
     def product_params
       params.require(:product).permit(:name, :description, :price, :company_id, :url,
-                                      :images_attributes => [:image])
+                                      :images_attributes => [:image, :image_cache])
     end
 end

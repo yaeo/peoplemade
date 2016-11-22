@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update]
+  before_action :industry_type, only: [:edit, :update]
 
   def edit
     @user = current_user
@@ -15,16 +16,28 @@ class UsersController < ApplicationController
     if @user.social.nil?
       @user.build_social
     end
-
-    #TODO industry_typeモデルをつくる
-    @industry_type = ['水産・農林業', '鉱業', '建設業', '製造業', '電気・ガス業', '倉庫・運輸関連業', '情報通信', '商業（卸売業、小売業）', '金融・保険業', '不動産業', '飲食店・宿泊業', '医療・福祉', '教育・学習支援業', 'サービス業', '官公庁・地方自治体', '財団法人・社団法人', 'NPO・NGO']
   end
 
   def update
     if current_user.update(user_params)
+      flash[:notice] = "基本情報を更新しました。"
       redirect_to root_url
     else
-      redirect_to root_url
+      flash[:alert] = "基本情報を更新に失敗しました。"
+      @user = current_user
+      #@userにcompanyが存在しなかったらbuildしてあげる
+      if @user.company.nil?
+        @user.build_company
+      end
+      #@userにaddressが存在しなかったらbuildしてあげる
+      if @user.address.nil?
+        @user.build_address
+      end
+      #@userにsocialが存在しなかったらbuildしてあげる
+      if @user.social.nil?
+        @user.build_social
+      end
+      render action: "edit"
     end
   end
 
@@ -37,5 +50,9 @@ class UsersController < ApplicationController
         address_attributes: [:id, :zipcode1, :zipcode2, :prefecture, :address1, :address2, :telnumber],
         social_attributes: [:id, :facebook, :twitter, :youtube, :instagram, :wantedly],
         )
+    end
+
+    def industry_type
+      @industry_type = ['水産・農林業', '鉱業', '建設業', '製造業', '電気・ガス業', '倉庫・運輸関連業', '情報通信', '商業（卸売業、小売業）', '金融・保険業', '不動産業', '飲食店・宿泊業', '医療・福祉', '教育・学習支援業', 'サービス業', '官公庁・地方自治体', '財団法人・社団法人', 'NPO・NGO']
     end
 end

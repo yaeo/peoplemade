@@ -19,7 +19,6 @@
           .field__form
             = f.text_area :description, placeholder: "商品のサイズ、重さ、素材などを書いてください"
         %section.image#content
-
           = f.fields_for :images do |image|
             .field__label
               = image.label :image, "商品の写真"
@@ -29,6 +28,7 @@
                 %span 画像を選択
                 %small （3MB以下のファイルをご使用ください）
                 = image.file_field :image, :multiple => true, name: "product[images_attributes][][image]", class: "image-selector"
+                = image.hidden_field :image_cache, :multiple => true, name: "product[images_attributes][][image_cache]"
         .field
           .field__label
             = f.label :price, "希望小売価格"

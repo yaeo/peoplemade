@@ -18,16 +18,19 @@ class StoriesController < ApplicationController
 
   def new
     @story = Story.new
-    @story.topics.build
     @story.stories_products.build
   end
 
   def create
     story = Story.new(story_params)
     if story.save
+      flash[:notice] = "ストーリーを作成しました。"
       redirect_to root_url
     else
-      redirect_to root_url
+      flash[:alert] = "ストーリーの保存に失敗しました。"
+      @story = Story.new(story_params)
+      @story.stories_products.build
+      render action: "new"
     end
   end
 
@@ -36,20 +39,23 @@ class StoriesController < ApplicationController
 
   def update
     if @story.update(story_params)
+      flash[:notice] = "ストーリーを編集しました。"
       redirect_to root_url
     else
-      redirect_to root_url
+      flash[:alert] = "ストーリーの編集に失敗しました。"
+      render action: "edit"
     end
   end
 
   def destroy
     @story.update(status: "deleted")
+    flash[:notice] = "ストーリーを削除しました。"
     redirect_to stories_url
   end
 
   private
     def story_params
-      params.require(:story).permit(:content, :image, :title, :intro, :user_id, :status,
+      params.require(:story).permit(:content, :image, :image_cache, :title, :intro, :user_id, :status,
         { :product_ids => [] },
         topics_attributes: [:id, :image, :caption, :heading, :content])
     end
