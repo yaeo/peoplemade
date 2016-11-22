@@ -38,3 +38,19 @@ body {
   -webkit-font-smoothing: antialiased;
   color: #333;
 }
+
+.notice {
+  text-align: center;
+  background-color: lightgreen;
+  color: #fff;
+  font-weight: bold;
+  line-height: 30px;
+}
+
+.alert {
+  text-align: center;
+  background-color: pink;
+  color: #fff;
+  font-weight: bold;
+  line-height: 30px;
+}
