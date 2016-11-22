@@ -49,6 +49,7 @@ class StoriesController < ApplicationController
 
   def destroy
     @story.update(status: "deleted")
+    flash[:notice] = "ストーリーを削除しました。"
     redirect_to stories_url
   end
 
