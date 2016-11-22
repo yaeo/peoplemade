@@ -4,8 +4,6 @@
   - breadcrumb :profile
   = breadcrumbs separator: " &gt; "
   #profile
-    - if flash[:notice]
-      .msg= flash[:notice]
     %h1 基本情報設定
     %section.form
       = form_for @user do |f|
