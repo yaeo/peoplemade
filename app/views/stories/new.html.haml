@@ -34,6 +34,7 @@
         .field
           .field__label
             = f.label :image, "表紙画像"
+            = f.hidden_field :image_cache
             %span.must 必須
           %p.note トップページなどに表示される表紙画像を設定してくだい。
         .image-selector-main
