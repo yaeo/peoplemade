@@ -54,4 +54,17 @@ ja:
       not_locked: "ロックされていません。"
       not_saved:
         one: "エラーにより、この %{resource} を保存できません："
-        other: "%{count} 個のエラーにより、この %{resource} を保存できません："
+        other: "%{count} 個のエラーにより、アカウントの作成に失敗しました："
+      taken: "は既に使用されています。"
+      blank: "が入力されていません。"
+      too_short: "は%{count}文字以上に設定して下さい。"
+      too_long: "は%{count}文字以下に設定して下さい。"
+      invalid: "は有効でありません。"
+      confirmation: "が内容とあっていません。"
+  activerecord:
+     attributes:
+          user:
+           name: "名前"
+           password: "パスワード"
+           password_confirmation: "パスワード確認"
+           email: "メールアドレス"
