@@ -23,7 +23,6 @@ class StoriesController < ApplicationController
 
   def create
     story = Story.new(story_params)
-    binding.pry
     if story.save
       flash[:notice] = "ストーリーを作成しました。"
       redirect_to root_url
@@ -32,7 +31,6 @@ class StoriesController < ApplicationController
       @story = Story.new(story_params)
       @story.stories_products.build
       render action: "new"
-      binding.pry
     end
   end
 
