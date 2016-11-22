@@ -39,9 +39,11 @@ class StoriesController < ApplicationController
 
   def update
     if @story.update(story_params)
+      flash[:notice] = "ストーリーを編集しました。"
       redirect_to root_url
     else
-      redirect_to root_url
+      flash[:alert] = "ストーリーの編集に失敗しました。"
+      render action: "edit"
     end
   end
 
