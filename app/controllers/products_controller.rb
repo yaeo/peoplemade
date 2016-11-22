@@ -34,9 +34,13 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     if @product.update(product_params)
+      flash[:notice] = "商品を編集しました。"
       redirect_to root_url
     else
-      redirect_to root_url
+      flash[:alert] = "商品の編集に失敗しました。"
+      @product = Product.find(params[:id])
+      @product.images.build
+      render action: "edit"
     end
   end
 
