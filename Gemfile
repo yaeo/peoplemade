@@ -17,6 +17,7 @@ gem "gretel"
 gem 'underscore-rails'
 gem 'rails-sanitize-js'
 gem "dante-editor"
+gem "fog"
 
 group :development, :test do
   gem 'byebug'
