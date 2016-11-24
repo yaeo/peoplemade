@@ -1,5 +1,3 @@
-編集テスト
-
 ## DBテーブル設計
 ### user
 #### association
