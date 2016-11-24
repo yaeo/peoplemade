@@ -18,6 +18,7 @@ gem 'underscore-rails'
 gem 'rails-sanitize-js'
 gem "dante-editor"
 gem "fog"
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'byebug'
