@@ -16,6 +16,18 @@ set :linked_files, fetch(:linked_files, []).push('config/secrets.yml')
 # シンボリックリンクをはるフォルダ。(※後述)
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
 
+set :default_env, {
+	rbenv_root: "/usr/local/rbenv",
+	path: "~/.rbenv/shims:~/.rbenv/bin:$PATH",
+	AWS_REGION: ENV['AWS_REGION'],
+	AWS_ACCESS_KEY_ID: ENV["AWS_ACCESS_KEY_ID"],
+  AWS_SECRET_ACCESS_KEY: ENV["AWS_SECRET_ACCESS_KEY"],
+  AWS_S3_BUCKET: ENV["AWS_S3_BUCKET"],
+  AWS_S3_URL: ENV["AWS_S3_URL"]
+}
+set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
+set :sidekiq_queue, :carrierwave
+
 # 保持するバージョンの個数(※後述)
 set :keep_releases, 5
 
