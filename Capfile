@@ -5,6 +5,7 @@ require 'capistrano/bundler'
 require 'capistrano/rails/assets'
 require 'capistrano/rails/migrations'
 
+set :linked_files, %w{config/secrets.yml .env}
 # require 'capistrano/rvm'
 # require 'capistrano/chruby'
 # require 'capistrano/passenger'
