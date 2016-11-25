@@ -20,9 +20,17 @@ gem "dante-editor"
 gem "fog"
 gem 'dotenv-rails'
 
+group :production, :staging do
+  gem 'unicorn'
+end
+
 group :development, :test do
   gem 'byebug'
   gem 'pry-byebug'
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
 end
 
 group :development do
