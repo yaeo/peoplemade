@@ -1,11 +1,11 @@
 # capistranoのバージョン固定
-lock '3.4.0'
+lock '3.6.1'
 
 # デプロイするアプリケーション名に変更してください
 set :application, 'pr-table'
 
 # cloneするgitのレポジトリに変更してください
-set :repo_url, 'git@github.com:Testtarou/hoge.git'
+set :repo_url, 'git@github.com:yaeo/pr-table.git'
 
 # deployするブランチ。デフォルトはmasterなのでなくても可。
 set :branch, 'master'
