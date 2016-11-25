@@ -11,7 +11,7 @@ set :repo_url, 'git@github.com:yaeo/pr-table.git'
 set :branch, 'master'
 
 # deploy先のディレクトリに変更してください
-set :deploy_to, '/var/www/sample'
+set :deploy_to, '/var/www/pr-table'
 
 # シンボリックリンクをはるファイル。(※後述)
 set :linked_files, fetch(:linked_files, []).push('config/secrets.yml')
