@@ -28,6 +28,14 @@ set :rbenv_ruby, '2.3.1'
 #出力するログのレベル。
 set :log_level, :debug
 
+set :default_env, {
+	AWS_ACCESS_KEY_ID: ENV["RAILS_SERVE_STATIC_FILES"],
+	AWS_SECRET_ACCESS_KEY: ENV["RAILS_SERVE_STATIC_FILES"],
+	AWS_REGION: ENV["RAILS_SERVE_STATIC_FILES"],
+	AWS_S3_BUCKET: ENV["RAILS_SERVE_STATIC_FILES"],
+	AWS_S3_URL: ENV["RAILS_SERVE_STATIC_FILES"]
+}
+
 namespace :deploy do
   desc 'Restart application'
   task :restart do
