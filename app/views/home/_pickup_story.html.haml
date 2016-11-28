@@ -1,5 +1,5 @@
 .main-pickup-stories__story
-  =link_to root_path, style: "background-image: url(#{asset_path(pickup_story.image)});" do
+  =link_to story_path(pickup_story), style: "background-image: url(#{asset_path(pickup_story.image)});" do
     .title
       .title__compnay
         .title__compnay__logo
