@@ -1,0 +1,8 @@
+.main-pickup-stories__story
+  =link_to root_path, style: "background-image: url(#{asset_path(pickup_story.image)});" do
+    .title
+      .title__compnay
+        .title__compnay__logo
+          =image_tag(pickup_story.user.company.logo)
+        .title__compnay__name= pickup_story.user.company.name
+      .title__story-title= pickup_story.title
