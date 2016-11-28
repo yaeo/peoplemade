@@ -8,10 +8,13 @@
     #main-left
       %section#list-stories
         = render partial: 'story', collection: @stories
-      = render 'shared/more'
+      -# 新着一覧ボタンが実装されてたら表示する
+      -# = render 'shared/more'
+      %h3.section-title 🎉🎉 新着プロダクト 🎉🎉
       %section#list-products
         = render partial: 'shared/product_list', collection: @product_lists
-      = render 'shared/more'
+      -# 新着一覧ボタンが実装されてたら表示する
+      -# = render 'shared/more'
     #side-menu
       %section#recommend-stories
         .container
