@@ -7,7 +7,7 @@
   #main-container
     #main-left
       %section#list-stories
-        = render partial: 'shared/list_story', collection: @list_stories
+        = render partial: 'story', collection: @stories
       = render 'shared/more'
       %section#list-products
         = render partial: 'shared/product_list', collection: @product_lists
