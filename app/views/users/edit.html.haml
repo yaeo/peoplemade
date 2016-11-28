@@ -1,4 +1,4 @@
-- provide(:title, "基本情報設定｜PR Table")
+- provide(:title, "基本情報設定｜Product Story")
 #wrap
   = render 'shared/header'
   - breadcrumb :profile
@@ -42,7 +42,7 @@
                 = company.label :name, "会社・団体名"
                 %span.must 必須
               .field-form
-                = company.text_field :name, placeholder: "例） 株式会社PR Table"
+                = company.text_field :name, placeholder: "例） 株式会社Product Story"
             .form-field
               .field-label
                 = company.label :kana, "会社名　フリガナ"
