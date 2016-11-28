@@ -1,7 +1,9 @@
 - provide(:title, "PR Table")
 #wrap.gray
   = render 'shared/header'
-  = render 'shared/pickup-stories'
+  %section#main-pickup-stories
+    .main-pickup-stories
+      = render partial: 'pickup_story', collection: @pickup_stories
   #main-container
     #main-left
       %section#list-stories

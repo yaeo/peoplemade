@@ -6,5 +6,6 @@ class HomeController < ApplicationController
     unique_story_ids = Story.select("user_id").uniq
     user_ids = unique_story_ids.map(&:user_id)
     @company_lists = Company.where(user_id: user_ids)
+    @pickup_stories = Story.published.order("updated_at DESC").limit(2)
   end
 end
