@@ -18,10 +18,10 @@ gem 'underscore-rails'
 gem 'rails-sanitize-js'
 gem "dante-editor"
 gem "fog"
-gem 'dotenv-rails'
 
 group :production, :staging do
   gem 'unicorn'
+  gem 'dotenv-rails'
 end
 
 group :development, :test do
