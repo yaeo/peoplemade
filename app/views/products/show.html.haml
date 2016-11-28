@@ -18,7 +18,7 @@
             %span.small 希望小売価格
             %span.yen= number_to_currency(@product.price, unit: "円", format: "%n%u", precision: 0 )
         .story
-          =link_to "商品ストーリーを読む", "#"
+          =link_to "商品ストーリーを読む", story_path(@product.stories.last)
         .description
           = sanitize(@product.description, tags: %w(\r\n \r \n)).gsub(/(\r\n|\r|\n)/, "<br>").html_safe
         .company
