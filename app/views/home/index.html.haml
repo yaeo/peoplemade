@@ -8,20 +8,24 @@
     #main-left
       %section#list-stories
         = render partial: 'story', collection: @stories
-      = render 'shared/more'
+      -# 新着一覧ボタンが実装されてたら表示する
+      -# = render 'shared/more'
+      %h3.section-title 🎉🎉 新着プロダクト 🎉🎉
       %section#list-products
         = render partial: 'shared/product_list', collection: @product_lists
-      = render 'shared/more'
+      -# 新着一覧ボタンが実装されてたら表示する
+      -# = render 'shared/more'
     #side-menu
       %section#recommend-stories
         .container
           %h2 注目のストーリー
           .stories
             = render partial: 'shared/recommend_story', collection: @recommend_stories
-      = render 'shared/recommend-topic'
+      -# 商品とストーリーにカテゴリー機能が追加できたら出す
+      -# = render 'shared/recommend-topic'
       %section#company-list
         .container
           %h2 ストーリー掲載企業
           = render partial: 'shared/company_list', collection: @company_lists
-      = render 'shared/banner'
+      -# = render 'shared/banner'
   = render 'shared/footer'
