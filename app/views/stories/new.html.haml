@@ -1,11 +1,11 @@
-- provide(:title, "ストーリー作成｜Product Story")
+- provide(:title, "ストーリー作成｜People Made")
 #wrap
   = render 'shared/header'
   - breadcrumb :new_story
   = breadcrumbs separator: " &gt; "
   .main-wrap
     .instruction
-      ストーリー作成完了後、Product Story編集部が最終確認を行います。
+      ストーリー作成完了後、People Made編集部が最終確認を行います。
       %br
       下記「ストーリー作成のポイント」をご参照の上ご作成いただくと、公開審査がスムーズになります。
       %br
@@ -82,7 +82,7 @@
           =f.submit "編集を保存", id: "js-save-as-inreview"
         - else
           =f.submit "下書き保存", id: "js-save-as-draft"
-          =f.submit "ストーリーを保存して、Product Story編集部に最終確認を申請する", id: "js-save-as-inreview"
+          =f.submit "ストーリーを保存して、People Made編集部に最終確認を申請する", id: "js-save-as-inreview"
   = render 'shared/footer'
 
 :javascript
