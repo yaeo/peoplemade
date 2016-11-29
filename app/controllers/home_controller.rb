@@ -13,4 +13,8 @@ class HomeController < ApplicationController
     user_ids = unique_story_ids.map(&:user_id)
     @company_lists = Company.where(user_id: user_ids)
   end
+
+  def about
+    render file: 'public/about.html.haml'
+  end
 end

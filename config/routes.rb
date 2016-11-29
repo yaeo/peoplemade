@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root :to => 'home#index'
   resources :stories
   resources :products
+  get "about", :to => 'home#about'
   get "profile", :to => 'users#edit'
   resources :users, only: [:update]
   get ':custom_url', :to => 'companies#show', as: 'company'
