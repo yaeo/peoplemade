@@ -1,0 +1,19 @@
+#wrap
+  = render 'shared/header'
+  .single-column-wrap
+    .inner-wrapper
+      %h1.about People Made[ピープルメイド]は、</br>商品とそのバックグラウンドストーリーを投稿/共有できるポータルサイトです。
+      .content-wrapper.gray
+        %h2.section-title 🙌 People Madeでできること 🙌
+        .functions
+          .function
+            .function__image= image_tag ('letter.png')
+            %h3.function__name ストーリーの作成/投稿
+            %p.function__description 商品情報だけを伝えるのではなく、思いや技術など商品の裏側にあるストーリを読み手に伝えられると 👌👌
+            .btn=link_to "ストーリーの例を読む", story_path(1)
+          .function
+            .function__image= image_tag('gift.png')
+            %h3.function__name 商品の登録
+            %p.function__description 商品を登録すると、作成したストーリーに登場させることができます。ストーリーと一緒に商品を発表 🎉🎉
+            .btn=link_to "商品の例を見る", product_path(1)
+  = render 'shared/footer'
