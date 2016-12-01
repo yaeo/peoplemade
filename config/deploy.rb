@@ -5,7 +5,7 @@ lock '3.6.1'
 set :application, 'pr-table'
 
 # cloneするgitのレポジトリに変更してください
-set :repo_url, 'git@github.com:yaeo/pr-table.git'
+set :repo_url, 'git@github.com:yaeo/peoplemade.git'
 
 # deployするブランチ。デフォルトはmasterなのでなくても可。
 set :branch, 'master'
