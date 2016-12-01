@@ -1,5 +1,11 @@
-People Made [ピープルメイド]は、商品とそのバックグラウンドストーリーを投稿/共有できるポータルサイトです。
-People Made is a place where you can post and share your products and the background story of it.
+### People Made[ピープルメイド]とは？
+People Madeは、商品とそのバックグラウンドストーリーを投稿/共有できるポータルサイトです。
+
+### What is People Made?
+People Made is a place where you can post and share your products and the background story of products and your story.
+
+### Its on Internet 🎉 http://52.199.137.129/
+Please take a look and let me know if you have any advise.
 
 ## DBテーブル設計
 ### user
