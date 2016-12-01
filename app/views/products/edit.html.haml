@@ -20,7 +20,11 @@
           .field__form
             = f.text_area :description, placeholder: "商品のサイズ、重さ、素材などを書いてください"
         %section.image#content
-          = f.fields_for :images, @product.images.build, html: { method: "patch" }  do |image|
+          %ul#selected-images
+            - if @product.images.present?
+              - @product.images.each do |image|
+                %li= image_tag image.image
+          = f.fields_for :images, @product.images.build do |image|
             .field__label
               = image.label :image, "商品の写真"
               %span.must 必須

@@ -11,5 +11,11 @@ class Product < ApplicationRecord
   validates :description, presence: true
   validates :price, presence: true
   validates :price, numericality: { greater_than: 0 }
-  validates_presence_of :images
+  validate  :has_images?
+
+  def has_images?
+    if self.images.first.image.blank?
+      errors.add(:images, "should have least one image")
+    end
+  end
 end
