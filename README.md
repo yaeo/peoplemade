@@ -1,3 +1,5 @@
+![peoplemade_logo](https://cloud.githubusercontent.com/assets/1336608/20788733/51343262-b7f5-11e6-9ea7-18fa4b4f230b.png)
+
 ### People Made[ピープルメイド]とは？
 People Madeは、商品とそのバックグラウンドストーリーを投稿/共有できるポータルサイトです。
 
