@@ -74,10 +74,14 @@
           li {
             width: 100px;
             text-align: right;
-            img {
+            .image {
+              margin-left: auto;
+              margin-top: 15px;
               width: 35px;
               height: 35px;
-              vertical-align: middle;
+              background-size: contain;
+              background-repeat: no-repeat;
+              background-position: center;
             }
             ul {
               display: none;
