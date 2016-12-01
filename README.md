@@ -9,6 +9,9 @@ People Made is a place where you can post and share your products and the backgr
 ### Its on Internet 🎉 http://52.199.137.129/
 Please take a look and let me know if you have any advise.
 
+## Screenshots
+![TOP](https://cloud.githubusercontent.com/assets/1336608/20788954/09966aa0-b7f6-11e6-8e27-fd69f72443ec.png)  
+
 ## DBテーブル設計
 ### user
 #### association
