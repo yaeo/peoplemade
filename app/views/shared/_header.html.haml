@@ -26,9 +26,11 @@
             %ul#dropmenu
               %li
                 - if current_user.company.nil?
-                  = image_tag("company-logo.png")
+                  -# = image_tag("company-logo.png")
+                  .image{style: "backgroud-image: url('company-logo.png)';"}
                 - else
-                  = image_tag current_user.company.logo
+                  -# = image_tag current_user.company.logo
+                  .image{style: "background-image: url(#{asset_path(current_user.company.logo)});"}
                 %ul
                   %li= link_to "ストーリーの編集", stories_path
                   %li= link_to "商品の編集", products_path
