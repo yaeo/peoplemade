@@ -20,8 +20,9 @@
           .image {
             width: 50px;
             height: 50px;
-            background-size: cover;
+            background-size: contain;;
             background-repeat: no-repeat;
+            background-position: center;
           }
           .name {
             padding-left: 30px;
