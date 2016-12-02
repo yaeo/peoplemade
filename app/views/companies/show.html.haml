@@ -6,7 +6,7 @@
   #company-cover-image{style: "background-image: url(#{asset_path(@company.cover_image)});"}
   .single-column-wrap
     #company-header
-      =image_tag @company.logo
+      .logo{style: "background-image: url(#{asset_path(@company.logo)});"}
       %h1= @company.name
     %h2.comapay-detail 商品一覧
     #company-products

@@ -8,11 +8,15 @@
 #company-header {
   margin-top: -80px;
   text-align: center;
-  img {
+  .logo {
     width: 140px;
     height: 140px;
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.4);
     border-radius: 5px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin: 0 auto;
   }
   h1 {
     font-size: 30px;
