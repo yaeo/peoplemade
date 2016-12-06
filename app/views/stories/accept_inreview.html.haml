@@ -1,0 +1,13 @@
+#wrap
+  = render 'shared/header'
+  .single-column-wrap
+    .inner-wrapper
+      %h1.about ストーリーの申請ありがとうございます 🎉
+      .content-wrapper.gray
+        %h2.section-title 🙌 1週間以内にメールにて結果をご連絡いたします 🙌
+        .functions
+          .function
+            .function__image= image_tag ('letter.png')
+            %h3.function__name 審査に通過した場合、<br>自動的にストーリーは公開されます。
+            .btn=link_to "ストーリー一覧に戻る", stories_path
+  = render 'shared/footer'
