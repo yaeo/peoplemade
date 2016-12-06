@@ -24,8 +24,12 @@ class StoriesController < ApplicationController
   def create
     story = Story.new(story_params)
     if story.save
-      flash[:notice] = "ストーリーを作成しました。"
-      redirect_to root_url
+      if story.status == "inreview"
+          render action: "accept_inreview"
+      else
+        flash[:notice] = "ストーリーを下書き保存しました。"
+        redirect_to root_url
+      end
     else
       flash[:alert] = "ストーリーの保存に失敗しました。"
       @story = Story.new(story_params)
@@ -39,8 +43,12 @@ class StoriesController < ApplicationController
 
   def update
     if @story.update(story_params)
-      flash[:notice] = "ストーリーを編集しました。"
-      redirect_to root_url
+      if @story.status == "inreview" #申請だった場合、申請完了ページを表示する
+        render action: "accept_inreview"
+      else #下書きだった場合、トップに戻るを表示する
+        flash[:notice] = "ストーリーを編集しました。"
+        redirect_to root_url
+      end
     else
       flash[:alert] = "ストーリーの編集に失敗しました。"
       render action: "edit"
@@ -52,6 +60,14 @@ class StoriesController < ApplicationController
     flash[:notice] = "ストーリーを削除しました。"
     redirect_to stories_url
   end
+
+  def accept_inreview
+
+  end
+
+
+
+
 
   private
     def story_params
