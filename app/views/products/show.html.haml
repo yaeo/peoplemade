@@ -19,7 +19,7 @@
             %span.yen= number_to_currency(@product.price, unit: "円", format: "%n%u", precision: 0 )
         .story
           - if @product.stories.published.present?
-            =link_to "商品ストーリーを読む", story_path(@product.stories.last)
+            =link_to "商品ストーリーを読む", story_path(@product.stories.published.last)
         .description
           = sanitize(@product.description, tags: %w(\r\n \r \n)).gsub(/(\r\n|\r|\n)/, "<br>").html_safe
         .company
