@@ -23,24 +23,21 @@
       %h2 会社・団体概要
       .detail
         %dl
-          %dt 社名
-          %dd 会社名だよー
+          %dt ブランド名
+          %dd= @company.name
         %dl
-          %dt 会社・団体説明
-          %dd 会社・団体説明だよー会社・団体説明だよー会社・団体説明だよー会社・団体説明だよー会社・団体説明だよー会社・団体説明だよー
+          %dt 会社・ブランド説明
+          %dd= @company.profile
         %dl
           %dt 代表者
-          %dd 代表者名だよー
+          %dd= @company.ceo_name
         %dl
           %dt 設立年月日
-          %dd 設立年月日だよー
+          %dd= @company.establish_y
         %dl
           %dt 住所
-          %dd 住所だよー
+          %dd= @company.user.address.zipcode_address
         %dl
-          %dt ビジョン・ミッション
-          %dd ビジョン・ミッションだよー
-        %dl
-          %dt URL
-          %dd URLだよー
+          %dt 公式ページ
+          %dd= link_to @company.about_url, @company.about_url
   = render 'shared/footer'
