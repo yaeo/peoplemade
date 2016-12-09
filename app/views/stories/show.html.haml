@@ -65,11 +65,11 @@
                         = image_tag(@story.company_logo)
                       .figcaption= @story.company_name
                   .link
-                    = link_to "> この会社について", company_path(@story.custom_url)
+                    = link_to "> このブランドの他のストーリー", company_path(@story.custom_url)
                 .buttons
                   %ul
                     %li
-                      =link_to "取材したい", "#", class:"coverage"
+                      =link_to "公式ページ", @story.user.company.about_url , class:"coverage"
             .other-story
               - @story.user.stories.published.each do |story|
                 %article
