@@ -112,19 +112,14 @@
                 = company.text_field :homepage_url, placeholder: "例）http://localhost:3000/"
             .form-field
               .field-label
-                = company.label :industry_type, "業種"
+                = company.label :industry_type, "カテゴリー"
               .field-form
                 = company.select :industry_type, @industry_type, prompt: "未選択"
             .form-field
               .field-label
-                = company.label :profile, "会社・団体説明"
+                = company.label :profile, "会社・ブランド説明"
               .field-form
-                = company.text_area :profile, placeholder: "例）インターネットを活用した企業の広報活動支援"
-            .form-field
-              .field-label
-                = company.label :vision, "ビジョン・ミッション"
-              .field-form
-                = company.text_area :vision, placeholder: "例）いつまでも色あせないストーリーに満ち溢れた世界を創る"
+                = company.text_area :profile, placeholder: "例）会社の説明やブランドコンセプトをご入力ください"
             .form-field
               .field-label
                 = company.label :establish_y, "設立年月日"
@@ -168,14 +163,8 @@
           = f.fields_for :company do |company|
             .form-field
               .field-label
-                = company.label :recruit_url, "「働きたい」ボタンの遷移先URL"
-              %p 自社の採用サイトや求人を掲載しているサイトのURLをご入力ください。
-              .field-form
-                = company.text_field :recruit_url
-            .form-field
-              .field-label
-                = company.label :about_url, "「事業を知る」ボタンの遷移先URL"
-              %p 自社の製品・サービスサイトのURLをご記入ください。
+                = company.label :about_url, "「公式ページ」ボタンの遷移先URL"
+              %p 自社の製品・ブランドサイトのURLをご記入ください。
               .field-form
                 = company.text_field :about_url
         %section#submit
