@@ -38,9 +38,6 @@
           %dt 住所
           %dd= @company.user.address.zipcode_address
         %dl
-          %dt ビジョン・ミッション
-          %dd= @company.profile
-        %dl
           %dt 公式ページ
-          %dd= @company.about_url
+          %dd= link_to @company.about_url, @company.about_url
   = render 'shared/footer'
