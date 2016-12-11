@@ -10,5 +10,6 @@
 # two: {}
 # column: value
 
-# admin_user:
-#   email: admin@test.com
+admin_user:
+  email: admin@test.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
