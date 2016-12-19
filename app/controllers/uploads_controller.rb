@@ -4,4 +4,8 @@ class UploadsController < ApplicationController
     upload.save!
     render json: { link: upload.image.url }
   end
+
+  def destroy
+    Image.find(params[:id]).destroy
+  end
 end

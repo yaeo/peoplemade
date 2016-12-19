@@ -24,6 +24,8 @@
             - if @product.images.present?
               - @product.images.each do |image|
                 %li= image_tag image.image
+                .btn= link_to "削除", upload_path(image), method: :delete
+
           = f.fields_for :images, @product.images.build do |image|
             .field__label
               = image.label :image, "商品の写真"
